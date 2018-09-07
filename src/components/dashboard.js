@@ -7,6 +7,7 @@ export default function Dashboard(props) {
 	return (
 		<div className="dashboard">
 			<h3>Dashboard</h3>
+			<div className="greeting">Hello {props.name}!</div>
 			<PurchaseForm />
 			<PurchaseHistory />
 		</div>

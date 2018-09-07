@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 export default function SignUp(props) {
 	return (
@@ -19,7 +20,7 @@ export default function SignUp(props) {
 	        </input>
 	        <button type="submit">Submit</button>
 	      </form>
-	      <p>Already have an account? <a href="#">Sign in.</a></p>
+	      <p>Already have an account? <Link to="/login">Log in</Link></p>
 	    </div>
 	);
 }

@@ -1,14 +1,15 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 export default function Navbar(props) {
 
 	return (
-		// eslint-disable-next-line
+		
 		<nav className="navbar">
 
-			<a href="#">Home</a>
-      		<a href="#">Login/Signup</a>     
-      		<a href="#">Dashboard</a>
+			<Link to="/">Home</Link>
+      		<Link to="/login">Login/Signup</Link>     
+      		<Link to="/dashboard">Dashboard</Link>
 		</nav>
 	);
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 export default function Login(props) {
 	return (
@@ -13,7 +14,7 @@ export default function Login(props) {
 	        </input>
 	        <button type="submit">Submit</button>
 	      </form>
-	      <p>Don't have an account? <a href="#">Sign up.</a></p>
+	      <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
 	    </div>
 	);
 }
