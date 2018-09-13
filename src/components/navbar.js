@@ -8,7 +8,7 @@ export default function Navbar(props) {
 		<nav className="navbar">
 
 			<Link to="/">Home</Link>
-      		<Link to="/login">Login/Signup</Link>     
+      		<Link to="/login">My Account</Link>     
       		<Link to="/dashboard">Dashboard</Link>
 		</nav>
 	);

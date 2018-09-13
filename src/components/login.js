@@ -6,10 +6,10 @@ export default function Login(props) {
 		<div>
 	      <h3>Sign In</h3>
 	      <form>
-	        <label for="email">Email</label>
+	        <label htmlFor="email">Email</label>
 	        <input id="email" type="text">
 	        </input>
-	        <label for="password">Password</label>
+	        <label htmlFor="password">Password</label>
 	        <input id="password" type="text">
 	        </input>
 	        <button type="submit">Submit</button>
