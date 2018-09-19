@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import React from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Header from './header';
 import Navbar from './navbar';
 import Home from './home';
@@ -8,16 +8,19 @@ import Login from './login';
 import SignUp from './signup';
 import {refreshAuthToken} from '../actions/auth';
 import {StripeProvider} from 'react-stripe-elements';
+import Payment from './Payment/Payment';
+import {Elements} from 'react-stripe-elements';
+
 
 import '../App.css';
-import logo from '../logo.svg';
+
 
 
 export default class App extends React.Component {
-  //stripe adddon
+  //stripe 
   constructor() {
     super();
-    this.state = {stripe: null};
+    this.state = {stripe: null, product: null};
   }
     componentDidMount() {
     if (window.Stripe) {
@@ -30,7 +33,7 @@ export default class App extends React.Component {
     }
   }
 
-  //original
+  //if logged in
   componentDidUpdate(prevProps) {
       if (!prevProps.loggedIn && this.props.loggedIn) {
           // When we are logged in, refresh the auth token periodically
@@ -57,24 +60,28 @@ export default class App extends React.Component {
            return;
        }
        clearInterval(this.refreshInterval);
-    }
+   }
 
     render() {
+
+
       return (
-        <StripeProvider stripe={this.state.stripe}>
+        <Elements>
           <Router>
             <div className="App">
               <Header />
               <Navbar />
               <main>
+              
                 <Route exact path="/" component={Home} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/signup" component={SignUp} />
                 <Route exact path="/dashboard" component={Dashboard} />
+                <Route exact path="/payment" component={Payment} />
               </main>
             </div>
           </Router>
-        </StripeProvider>
+        </Elements>
       );
     }
 }

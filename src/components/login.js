@@ -1,47 +1,26 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import {Field, reduxForm, focus} from 'redux-form';
-import Input from './input';
-import {login} from '../actions/auth';
-import {fetchProtectedData} from '../actions/protected-data';
+import {connect} from 'react-redux';
+import {Link, Redirect} from 'react-router-dom';
 
+import LoginForm from './login-form';
 
-export class Login extends React.Component {
-	onSubmit(values) {
-        const {username, password} = values;
-        return this.props
-        .dispatch(login(username, password))
-        .then(() => this.props.dispatch(fetchProtectedData()));
+export function Login(props) {
+    // If we are logged in (which happens automatically when registration
+    // is successful) redirect to the user's dashboard
+    if (props.loggedIn) {
+        return <Redirect to="/dashboard" />;
     }
-    render() {
-		return (
-			<div>
-		      <h3>Sign In</h3>
-		      <form onSubmit={this.props.handleSubmit(values =>
-	                    this.onSubmit(values)
-	                )}>
-		        <label htmlFor="username">Username</label>
-	                <Field
-	                    component={Input}
-	                    type="text"
-	                    name="username"
-	                />
-		        <label htmlFor="password">Password</label>
-	                <Field
-	                    component={Input}
-	                    type="password"
-	                    name="password"
-	                />
-		        <button type="submit">Submit</button>
-		      </form>
-		      <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
-		    </div>
-		);
-	}
+    return (
+        <div className="sign-in">
+            <h2>Sign In</h2>
+            <LoginForm />
+            <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+        </div>
+    );
 }
 
-export default reduxForm({
-    form: 'login',
-    onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('login', Object.keys(errors)[0]))
-})(Login);
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(Login);

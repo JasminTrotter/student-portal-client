@@ -78,6 +78,18 @@ export const login = (username, password) => dispatch => {
     );
 };
 
+
+export const logout = (dispatch) => {
+    dispatch(clearAuthToken())
+    dispatch(logoutSuccess())
+    console.log('logout clicked')
+}
+
+export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS"
+export const logoutSuccess = () => ({
+    type: LOGOUT_SUCCESS
+});
+
 export const refreshAuthToken = () => (dispatch, getState) => {
     dispatch(authRequest());
     const authToken = getState().auth.authToken;
