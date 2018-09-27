@@ -7,6 +7,6 @@ deploy:
   provider: heroku
   api_key:
     secure: s02czxeLOmA96OCt63IxEKdNYlgFelYVEE+vzAL2KIlJKkhcpPYYj0/Rv2tYw9F3bG2QMq53V2wLBZ+31WdXySjF51F5L94ChKhSCUC/IPRe1OLEXgI5iFwcQASG5qN91NHbrQ1Wnmg/jfqsLRpTrRPBhiL5ZckBilBDvr8qDpK2+JfCWi2KPFJ/g2wSfWUf2/muFtINuufLC+B1ee6fI4gIJ4NmsLyTHkaocnHgTWthDzcJehJhL+In3NV20QXmRgnU9ct+ImE69f6E8N5Jvqk9+jGtzFm4EjpS1r3BPB1m6eVv6t46I1Sz0MSJQjLeSKf8hixHWPHJBlvs2OfY9esyo1xmYFC9V7uVb3C0vTjRv7oY1l2P1/G1mqKIJoCuHDK0H5Fi4Iz4JtUn0tsN8HHWWbUFAs5g3ZwbmzkCt8KjF7uIIN96dcoxjs9W05k+EZgu7CbndPxTKTQ06EUfCJBGyHAUa2ka2fbIv9Wd7nRlZRXBkGmKVqahLETBX0rfhTbaiGjSCEegvVK5k6CrZHlvTmi9cqW4l5Bg1WBA2w/8UUvLVuxoJ4E26DW5PnPkvrcD84ulMwPKA8u3U/jTyDzp9AkJsVo2RfVU/v7LoLnsXj+dk7V+oeWiOh2JJbT+2166lRp/gjotCICvhFuxZ0KfG/XMFc1NTrKfRvBfUYk=
-  app: shrouded-inlet-96151
+  app: student-portal-balletbody
   on:
     repo: JasminTrotter/student-portal-client
