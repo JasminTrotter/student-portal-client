@@ -1,54 +1,34 @@
-import React from 'react';
-import {injectStripe} from 'react-stripe-elements';
-import CardSection from './CardSection'
+import React, {Component} from 'react';
+import {CardElement, injectStripe} from 'react-stripe-elements';
+import {API_BASE_URL} from '../../config';
 
+class Payment extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {complete: false};
+    this.submit = this.submit.bind(this);
+  }
 
-class Payment extends React.Component {
-    handleSubmit = (e) => {
-        e.preventDefault();
+ 	async submit(ev) {
+	  let {token} = await this.props.stripe.createToken({name: "Name"});
+	  let response = await fetch(`${API_BASE_URL}/charge`, {
+	    method: "POST",
+	    headers: {"Content-Type": "text/plain"},
+	    body: token.id
+  		});
 
-        // Within the context of `Elements`, this call to createToken knows which Element to
-        // tokenize, since there's only one in this group.
-        this.props.stripe.createToken({name: 'Jasmin Trotter'})
-            .then(({token}) => {
-                // console.log(token);
+  		if (response.ok) this.setState({complete: true});
+	}
 
-                    const paymentRequest = this.props.stripe.paymentRequest({
-                        country: 'US',
-                        currency: 'usd',
-                        total: {
-                            label: 'Demo total',
-                            amount: 1000,
-                        },
-                    });
-
-                    paymentRequest.on('token', ({complete, token, ...data}) => {
-                        console.log('Received Stripe token: ', token);
-                        console.log('Received customer information: ', data);
-                        complete('success');
-                    });
-
-                    paymentRequest.canMakePayment().then((result) => {
-                        console.log('Result', result);
-                    });
-
-        });
-
-    };
-    render() {
-        console.log(this.props);
-        return (
-            <div>
-                <h1>Payment Page</h1>
-                <form onSubmit={this.handleSubmit}>
-                <CardSection />
-
-                <button>Confirm order</button>
-              </form>
-          </div>
-        )
-    }
+  render() {
+    return (
+      <div className="checkout">
+        <p>Would you like to complete the purchase?</p>
+        <CardElement />
+        <button onClick={this.submit}>Send</button>
+      </div>
+    );
+  }
 }
 
-//injectStripe gives us the prop stripe
 export default injectStripe(Payment);
