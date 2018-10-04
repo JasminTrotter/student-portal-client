@@ -57,6 +57,9 @@ export default class App extends React.Component {
                     <Route exact path="/dashboard" component={Dashboard} />
                     <Route exact path="/payment" component={Payment} />
                   </main>
+                  <footer>
+                    <p>built by Jasmin Trotter</p>
+                  </footer>
                 </div>
               </Router>
             </Elements>

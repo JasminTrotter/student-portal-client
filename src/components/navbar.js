@@ -6,10 +6,8 @@ export default function Navbar(props) {
 	return (
 		
 		<nav className="navbar">
-
-			<Link to="/">Home</Link>
-      		<Link to="/login">My Account</Link>     
-      		<Link to="/dashboard">Dashboard</Link>
+			<Link to="/login">My Account</Link> 
+			<Link to="/">Home</Link>     		
 		</nav>
 	);
 }
