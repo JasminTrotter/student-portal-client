@@ -14,7 +14,7 @@ import {Provider} from 'react-redux';
 import store from '../store';
 
 
-import '../App.css';
+import '../styles/App.css';
 
 
 
@@ -48,7 +48,7 @@ export default class App extends React.Component {
               <Router>
                 <div className="App">
                   <Header />
-                  <Navbar />
+                  
                   <main>
                   
                     <Route exact path="/" component={Home} />

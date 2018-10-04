@@ -1,0 +1,87 @@
+
+body {
+	background-color: white;
+}
+
+
+
+.App-header {
+	height: 180px;
+	display: flex;
+	flex-wrap: nowrap;
+	padding: 20px;
+
+	/*dark-grey*/
+	color: #404040;
+
+	/*baby-blue*/
+	background-color: #B7DBF5;
+}
+
+.App-title {
+ 	font-family: 'Bebas';
+	font-size:50px;
+	margin-left: 20px;
+	flex-grow: 5;
+}
+
+.App-logo {
+	height:150px;
+	border: #BDBDBD 1px solid;
+	padding: 15px;
+	border-radius: 50%;
+	background-color: white;
+
+}
+
+main {
+	width: 80%;
+	margin: auto;
+
+	text-align: center;
+}
+
+.navbar {
+	border-top: #BDBDBD 1px solid;
+	border-bottom: #BDBDBD 1px solid;
+	height: 3vh;
+	position: static;
+	background-color: #404040;
+
+}
+
+.navbar a {
+	text-decoration: none;
+	color: white;
+}
+
+
+@media only screen and (max-width: 425px) {
+	.App-title {
+  		margin-top: 0px;
+  	
+
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	.App-title {
+	  	margin-top: 0px;
+	  	font-size: 35px;
+
+	}
+	.App-header {
+ 		height: 100px;
+
+	}
+	.App-logo {
+		height: 80%;
+	}
+} 
+
+
+@media only screen and (max-width: 320px) {
+
+ 
+
+} 

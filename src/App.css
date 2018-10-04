@@ -1,24 +1,35 @@
-.App {
+main {
   text-align: center;
 }
 
 .App-logo {
+	width: 40%;
 
-  height: 80px;
 }
 
 .App-header {
-  background-color: #222;
+
   height: 150px;
   padding: 20px;
-  color: white;
+  color: #040706;
 }
 
 .App-title {
-  font-size: 1.5em;
+ 	font-family: 'Bebas';
+	font-size:40px;
+
 }
 
 .App-intro {
   font-size: large;
+}
+
+main {
+	width: 80%;
+	margin: auto;
+}
+
+.navbar {
+	background-color: #040706;
 }
 
