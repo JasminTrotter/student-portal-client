@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/square-logo.jpg';
+import logo from '../styles/assets/square-logo.jpg';
 import Navbar from './navbar';
 
 export default function Header(props) {
