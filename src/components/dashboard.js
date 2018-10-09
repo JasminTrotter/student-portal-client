@@ -5,6 +5,16 @@ import {connect} from 'react-redux';
 import {saveAuthToken, clearAuthToken} from '../local-storage';
 import {logout} from '../actions/auth'
 
+const panelsStyles = {
+	display: "flex",
+	marginTop: "25px",
+	
+}
+
+const panelStyle = {
+	margin: "25px"
+}
+
 export function Dashboard(props) {
 
 	return (
@@ -12,8 +22,10 @@ export function Dashboard(props) {
 			<button onClick={() => this.props.dispatch(logout())}>logout</button>
 			<h3>Dashboard</h3>
 			<div className="greeting">Hello {props.name}!</div>
-			<ProductSelectForm />
-			<PurchaseHistory />
+			<div className="panels" style={panelsStyles}>
+				<div className="panel" style={panelStyle}><ProductSelectForm /></div>
+				<div className="panel" style={panelStyle}><PurchaseHistory /></div>
+			</div>
 		</div>
 	);
 }

@@ -14,6 +14,7 @@ export class ProductSelectForm extends React.Component {
     render() {
 		return (
 			<div>
+			  <h2>Select a Package</h2>
 		      <form onSubmit={this.props.handleSubmit(value =>
 	                    this.onSubmit(value)
 	                )}>

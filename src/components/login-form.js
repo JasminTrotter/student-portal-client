@@ -30,8 +30,8 @@ export class LoginForm extends React.Component {
 	                    component={Input}
 	                    type="password"
 	                    name="password"
-	                    style={{backgroundColor:"white !important"}}
-	                />
+	                    // style={{background:"white !important"}}
+	                    	                />
 		        <button type="submit">Submit</button>
 		      </form>
 		    </div>
