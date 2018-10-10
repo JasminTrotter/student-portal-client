@@ -14,6 +14,7 @@ export class LoginForm extends React.Component {
         .then(() => this.props.dispatch(fetchProtectedData()));
     }
     render() {
+    	console.log(this.props);
 		return (
 			<div>
 		      <form onSubmit={this.props.handleSubmit(values =>
@@ -30,7 +31,6 @@ export class LoginForm extends React.Component {
 	                    component={Input}
 	                    type="password"
 	                    name="password"
-	                    // style={{background:"white !important"}}
 	                    	                />
 		        <button type="submit">Submit</button>
 		      </form>

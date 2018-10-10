@@ -3,7 +3,9 @@ import ProductSelectForm from './product-select-form';
 import PurchaseHistory from './purchase-history';
 import {connect} from 'react-redux';
 import {saveAuthToken, clearAuthToken} from '../local-storage';
-import {logout} from '../actions/auth'
+import {logout} from '../actions/auth';
+import {Link, Redirect} from 'react-router-dom';
+import {pushPath} from 'react-router-redux';
 
 const panelsStyles = {
 	display: "flex",
@@ -16,23 +18,35 @@ const panelStyle = {
 }
 
 export function Dashboard(props) {
+	console.log(props);
+	console.log(logout);
 
-	return (
-		<div className="dashboard">
-			<button onClick={() => this.props.dispatch(logout())}>logout</button>
-			<h3>Dashboard</h3>
-			<div className="greeting">Hello {props.name}!</div>
-			<div className="panels" style={panelsStyles}>
-				<div className="panel" style={panelStyle}><ProductSelectForm /></div>
-				<div className="panel" style={panelStyle}><PurchaseHistory /></div>
+	if(props.loggedIn == null) {
+		return (<Redirect to={'/login'} />);
+	}
+
+
+	function logOut() {
+		props.dispatch(logout);
+		props.history.push('/');
+    }
+		
+	
+
+		return (
+			<div className="dashboard">
+				<button onClick={() => logOut()}>logout</button>
+				<h3>Dashboard</h3>
+				<div className="greeting">Hello {props.location.state.name}!</div>
+				<div className="panels" style={panelsStyles}>
+					<div className="panel" style={panelStyle}><ProductSelectForm /></div>
+					<div className="panel" style={panelStyle}><PurchaseHistory /></div>
+				</div>
 			</div>
-		</div>
-	);
+		);
+
 }
 
-//TODO: I want the user's first name to show in the greeting on Dashboard
-const mapStateToProps = (state) => ({
-	name: state.auth.currentUser.firstName
-})
+
 
 export default connect()(Dashboard);
