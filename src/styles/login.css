@@ -2,7 +2,17 @@
 	background-color: white !important;
 }
 
-label {
+.signin-form {
+	text-align:  center;
+}
+
+.signin-form-input, .sign-in {
+	margin: auto;
+	width: 30%;
+
+}
+
+.signin-form label {
 	margin-top:10px;
 }
 

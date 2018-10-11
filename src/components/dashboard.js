@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {saveAuthToken, clearAuthToken} from '../local-storage';
 import {logout} from '../actions/auth';
 import {Link, Redirect} from 'react-router-dom';
-import {pushPath} from 'react-router-redux';
+
 
 const panelsStyles = {
 	display: "flex",
@@ -21,12 +21,13 @@ export function Dashboard(props) {
 	console.log(props);
 	console.log(logout);
 
-	if(props.loggedIn == null) {
-		return (<Redirect to={'/login'} />);
-	}
+	// if(props.authToken == null) {
+	// 	return (<Redirect to={'/login'} />);
+	// }
 
 
 	function logOut() {
+
 		props.dispatch(logout);
 		props.history.push('/');
     }
@@ -35,9 +36,9 @@ export function Dashboard(props) {
 
 		return (
 			<div className="dashboard">
-				<button onClick={() => logOut()}>logout</button>
-				<h3>Dashboard</h3>
-				<div className="greeting">Hello {props.location.state.name}!</div>
+				<div className="logout-div"><button className="logout-button" onClick={() => logOut()}>logout</button></div>
+				<h2>Dashboard</h2>
+				<div className="greeting">Hello!</div>
 				<div className="panels" style={panelsStyles}>
 					<div className="panel" style={panelStyle}><ProductSelectForm /></div>
 					<div className="panel" style={panelStyle}><PurchaseHistory /></div>
@@ -47,6 +48,15 @@ export function Dashboard(props) {
 
 }
 
+const mapStateToProps = state => {
+    console.log(state);
+    return {
+    //authToken: state.auth.authToken,
+    //name: state.auth.currentUser.name
+    }
+};
+
+export default connect(mapStateToProps)(Dashboard);
 
 
-export default connect()(Dashboard);
+//Hello {props.location.state.name}!

@@ -13,39 +13,58 @@ export class ProductSelectForm extends React.Component {
     }
     render() {
 		return (
-			<div>
-			  <h2>Select a Package</h2>
+			<div className="product-select-form panel">
+			  <h3 className="panel-header">Select a Package</h3>
 		      <form onSubmit={this.props.handleSubmit(value =>
 	                    this.onSubmit(value)
 	                )}>
-		        <label htmlFor="8-classes">8 Classes - $120</label>
+		      <fieldset>
+		        	<div className="product-select-input">
 	                <Field
+	                	
 	                    component={Input}
 	                    type="radio"
 	                    name="8-classes"
-
+	                    label="8 Classes - $120"
+	                    value={120}
 	                />
-		        <label htmlFor="4-classes">4 Classes - $62</label>
+	                </div>
+	             	
+	            
+		        	<div className="product-select-input">
 	                <Field
+	                	
 	                    component={Input}
 	                    type="radio"
 	                    name="4-classes"
-
+	                    label="4 Classes - $62"
+	                    value={62}
 	                />
-	             <label htmlFor="2-classes">2 Classes - $32</label>
+	                </div>
+					<div className="product-select-input">
 	                <Field
+	                	
 	                    component={Input}
 	                    type="radio"
 	                    name="2-classes"
+	                    label="2 Classes - $32"
+	                    value={32}
 
 	                />
-	              <label htmlFor="1-class">1 Class - $18</label>
+	                </div>
+	                <div className="product-select-input">
 	                <Field
+
 	                    component={Input}
 	                    type="radio"
 	                    name="1-class"
+	                    label="1 Class - $18"
+	                    value={18}
 	                />
+	                </div>
+
 		        <button type="submit">Submit</button>
+		      </fieldset>
 		      </form>
 		    </div>
 		);

@@ -17,20 +17,24 @@ export class LoginForm extends React.Component {
     	console.log(this.props);
 		return (
 			<div>
-		      <form onSubmit={this.props.handleSubmit(values =>
+		      <form className="signin-form" onSubmit={this.props.handleSubmit(values =>
 	                    this.onSubmit(values)
 	                )}>
-		        <label htmlFor="username">Username</label>
+		        
 	                <Field
+	                	className="signin-form-input"
 	                    component={Input}
 	                    type="text"
 	                    name="username"
+	                    label="Username"
 	                />
-		        <label htmlFor="password">Password</label>
+		        
 	                <Field
+	                	className="signin-form-input"
 	                    component={Input}
 	                    type="password"
 	                    name="password"
+	                    label="Password"
 	                    	                />
 		        <button type="submit">Submit</button>
 		      </form>

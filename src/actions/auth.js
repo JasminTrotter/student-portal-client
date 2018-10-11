@@ -80,8 +80,8 @@ export const login = (username, password) => dispatch => {
 
 
 export const logout = (dispatch) => {
-    dispatch(clearAuth());
-    dispatch(logoutSuccess());
+    dispatch(clearAuth);
+    dispatch(logoutSuccess);
     console.log('logout clicked')
 }
 

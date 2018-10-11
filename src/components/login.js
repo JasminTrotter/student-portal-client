@@ -3,22 +3,20 @@ import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 
 import LoginForm from './login-form';
-
+import Dashboard from './dashboard'
 import '../styles/login.css';
 
 export function Login(props) {
     console.log(props);
     // If we are logged in (which happens automatically when registration
     // is successful) redirect to the user's dashboard
-    const userId = props.userId
-    const name = props.name
+    // const userId = props.userId
+    // const name = props.name
 
-    if (props.loggedIn) {
+    // if (props.authToken) {
                
-        return (<Redirect to={{
-            pathname: `/dashboard/${userId}`,
-            state: {name} }} />);
-    }
+    //     return (<Dashboard name={name} userId={userId}/>);
+    // }
 
 
    
@@ -35,9 +33,10 @@ export function Login(props) {
 const mapStateToProps = state => {
     console.log(state);
     return {
-    loggedIn: state.auth.currentUser.loggedIn,
-    userId: state.auth.currentUser.id,
-    name: state.auth.currentUser.name
+    // loggedIn: state.auth.currentUser.loggedIn,
+    // userId: state.auth.currentUser.id,
+    //name: state.auth.currentUser.name,
+    //authToken: state.auth.authToken
     }
 };
 

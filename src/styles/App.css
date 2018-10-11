@@ -9,14 +9,27 @@ body {
 
 }
 
+.logout-div {
+	width:100%;
+}
 
+.logout-button {
+	border: #BDBDBD solid 2px;
+	font-family: Bebas;
+	padding: 5px;
+	cursor: pointer;
+	float: right;
+	font-size: 15px;
+	border-radius: 5px;
+
+}
 
 .App-header {
 	height: 180px;
 	display: flex;
 	flex-wrap: nowrap;
 	padding: 20px;
-
+	width: 100vw;
 	/*dark-grey*/
 	color: #404040;
 
@@ -39,12 +52,18 @@ body {
 
 }
 
+
 main {
-	width: 40%;
+	/*width: 40%;*/
 	margin: auto;
 	text-align: center;
 	margin-bottom: 40px;
 	font-family: 'Roboto', sans-serif;
+}
+
+.about-us {
+	width: 40%;
+	margin: auto;
 }
 
 h1, h2, h3, nav {
@@ -57,7 +76,7 @@ p {
 
 h3 {
 	font-size: 25px;
-	margin-top: 50px;
+	margin-top: 20px;
 }
 
 .navbar {
@@ -68,6 +87,7 @@ h3 {
 	background-color: #404040;
 	padding-right: 25px;
 	color: white;
+	width: 100vw;
 }
 
 .navbar a {
@@ -76,6 +96,7 @@ h3 {
 	display:inline-block;
 	float: right;
 	font-size: 18px;
+
 }
 
 a {
@@ -104,6 +125,54 @@ footer p {
 	text-align: center;
 }
 
+.dashboard {
+	width: 100vw;
+	margin: auto;
+}
+.panels {
+	width: 100%;
+	columns: 200px 2;
+	justify-content: center;
+}
+
+.panel {
+	margin: 30px;
+}
+
+.purchase-history-list {
+	list-style: none;
+}
+
+.purchase-history-list li {
+	margin: 10px;
+}
+
+
+
+fieldset {
+	border: none;
+}
+
+.form-input {
+	display: flex;
+}
+
+.form-input input[type="radio"] {
+	order: -1;
+}
+
+.form-input input[type="text"], input[type="password"] {
+	order: 2;
+}
+
+.form-input label {
+	order: 1;
+}
+
+label, input {
+	margin: 10px;
+}
+
 
 
 @media only screen and (max-width: 1440px) {
@@ -118,7 +187,7 @@ footer p {
 	}
 }
 
-@media only screen and (max-width: 768) {
+@media only screen and (max-width: 768px) {
 	main {
 		width: 70%;
 	}
