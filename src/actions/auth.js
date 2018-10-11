@@ -79,8 +79,9 @@ export const login = (username, password) => dispatch => {
 };
 
 
-export const logout = (dispatch) => {
+export const logout = () => (dispatch) => {
     dispatch(clearAuth);
+    localStorage.removeItem('authToken');
     dispatch(logoutSuccess);
     console.log('logout clicked')
 }

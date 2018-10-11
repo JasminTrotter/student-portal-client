@@ -50,12 +50,13 @@ export default class App extends React.Component {
                   <Header />
                   
                   <main>
-                  
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/login" component={Login} />
-                    <Route exact path="/signup" component={SignUp} />
-                    <Route exact path="/dashboard" component={Dashboard} />
-                    <Route exact path="/payment" component={Payment} />
+                    <div className="App-container">
+                      <Route exact path="/" component={Home} />
+                      <Route exact path="/login" component={Login} />
+                      <Route exact path="/signup" component={SignUp} />
+                      <Route exact path="/dashboard" component={Dashboard} />
+                      <Route exact path="/payment" component={Payment} />
+                    </div>
                   </main>
                   <footer>
                     <p>built by Jasmin Trotter</p>

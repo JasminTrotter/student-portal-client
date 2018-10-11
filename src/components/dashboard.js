@@ -25,19 +25,17 @@ export function Dashboard(props) {
 	// 	return (<Redirect to={'/login'} />);
 	// }
 
-
-	function logOut() {
-
-		props.dispatch(logout);
-		props.history.push('/');
-    }
 		
 	
 
 		return (
 			<div className="dashboard">
-				<div className="logout-div"><button className="logout-button" onClick={() => logOut()}>logout</button></div>
-				<h2>Dashboard</h2>
+				<div className=""><button  onClick={() => { 
+					console.log('onclick ran');
+					props.dispatch(logout);
+					props.history.push('/');
+				}}>logout</button></div>
+				<h2 className="dash-header">Dashboard</h2>
 				<div className="greeting">Hello!</div>
 				<div className="panels" style={panelsStyles}>
 					<div className="panel" style={panelStyle}><ProductSelectForm /></div>

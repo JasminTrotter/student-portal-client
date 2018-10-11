@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import {API_BASE_URL} from '../../config';
-
+console.log(API_BASE_URL);
 class Payment extends Component {
   constructor(props) {
     super(props);
