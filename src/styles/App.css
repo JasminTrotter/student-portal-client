@@ -267,6 +267,11 @@ label, input {
  	.App-title {
  		font-size: 30px;
  	}
+ 	.homePage {
+ 		width: 100vw;
+ 		position: relative;
+ 		top: -100px;
+ 	}
 
 
 } 
