@@ -5,28 +5,12 @@ import {connect} from 'react-redux';
 import {saveAuthToken, clearAuthToken} from '../local-storage';
 import {logout} from '../actions/auth';
 import {Link, Redirect} from 'react-router-dom';
+import '../styles/dashboard.css';
 
-
-const panelsStyles = {
-	display: "flex",
-	marginTop: "25px",
-	
-}
-
-const panelStyle = {
-	margin: "25px"
-}
 
 export function Dashboard(props) {
 	console.log(props);
-	console.log(logout);
 
-	// if(props.authToken == null) {
-	// 	return (<Redirect to={'/login'} />);
-	// }
-
-		
-	
 
 		return (
 			<div className="dashboard">
@@ -36,25 +20,20 @@ export function Dashboard(props) {
 					props.history.push('/');
 				}}>logout</button></div>
 				<h2 className="dash-header">Dashboard</h2>
-				<div className="greeting">Hello!</div>
-				<div className="panels" style={panelsStyles}>
-					<div className="panel" style={panelStyle}><ProductSelectForm /></div>
-					<div className="panel" style={panelStyle}><PurchaseHistory /></div>
+				<div className="greeting">Hello ! </div>
+				<div className="panels" >
+					<div className="panel" ><ProductSelectForm /></div>
+					<div className="panel" ><PurchaseHistory /></div>
 				</div>
 			</div>
 		);
 
 }
 
-const mapStateToProps = state => {
-    console.log(state);
-    return {
-    //authToken: state.auth.authToken,
-    //name: state.auth.currentUser.name
-    }
-};
+const mapStateToProps = state => ({
+		// user: state.auth.currentUser
+})
 
 export default connect(mapStateToProps)(Dashboard);
 
-
-//Hello {props.location.state.name}!
+//{props.user.firstName}

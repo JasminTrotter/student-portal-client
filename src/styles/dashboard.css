@@ -1,0 +1,31 @@
+.dashboard {
+	width: 100vw;
+	margin: auto;
+}
+
+.panels {
+	width: 100%;
+	columns: 200px 2;
+	justify-content: center;
+	display: flex;
+	margin-top: 25px;
+}
+
+.panel {
+	margin: 30px;
+/*	border-left: #BDBDBD 2px solid;*/
+}
+
+.purchase-history-list {
+	list-style: none;
+}
+
+.purchase-history-list li {
+	margin: 10px;
+}
+
+
+
+@media only screen and (max-width: 320px) {
+
+}
