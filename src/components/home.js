@@ -2,7 +2,9 @@ import React from 'react';
 const {CLIENT_ORIGIN} = require('../config');
 
 export default function Home(props) {
+
 	return (
+
 		<div className="homePage">
 			<section className="about-us">
       			<h2>About Us</h2>

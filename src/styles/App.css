@@ -12,9 +12,6 @@ body {
 	background-color: white;
 
 }
-
-
-
 .logout-div {
 	width:100%;
 
@@ -31,24 +28,27 @@ body {
 	margin-right: 20px;
 }
 
+/*Dashboard Header*/
 .dash-header {
 	position: relative;
 	left: 40px;
 }
 
-.header-div {
+/*.header-div {
 	position: fixed;
-}
+	width: 100vw;
+}*/
 
 .App-header {
 	height: 180px;
 	display: flex;
 	flex-wrap: nowrap;
 	padding: 20px;
-	width: 100vw;
+	width: 100%;
+	position: fixed;
+
 	/*dark-grey*/
 	color: #404040;
-
 	/*baby-blue*/
 	background-color: #B7DBF5;
 }
@@ -68,6 +68,32 @@ body {
 
 }
 
+.navbar {
+	border-top: #BDBDBD 1px solid;
+	border-bottom: #BDBDBD 1px solid;
+	height: 50px;
+	background-color: #404040;
+	padding-right: 25px;
+	color: white;
+	width: 100vw;
+	position: fixed;
+	top: 205px;
+}
+
+.navbar a {
+	color: white;
+	padding: 13px 13px; 
+	display:inline-block;
+	float: right;
+	font-size: 18px;
+	font-family: 'Roboto', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
 
 main {
 	/*width: 40%;*/
@@ -82,6 +108,7 @@ main {
 	position: absolute;
 	margin-top: 300px;
 	width: 100vw;
+	margin-bottom: 50px;
 }
 
 .about-us {
@@ -111,30 +138,7 @@ h3 {
 	margin-top: 20px;
 }
 
-.navbar {
-	border-top: #BDBDBD 1px solid;
-	border-bottom: #BDBDBD 1px solid;
-	height: 50px;
-	position: static;
-	background-color: #404040;
-	padding-right: 25px;
-	color: white;
-	width: 100vw;
-}
 
-.navbar a {
-	color: white;
-	padding: 13px 13px; 
-	display:inline-block;
-	float: right;
-	font-size: 18px;
-	font-family: 'Roboto', sans-serif;
-}
-
-a {
-	text-decoration: none;
-	cursor: pointer;
-}
 
 section {
 	overflow: scroll;
@@ -221,7 +225,7 @@ label, input {
 }
 
 @media only screen and (max-width: 768px) {
-	main {
+	.App-container {
 		width: 70%;
 	}
 }
@@ -246,6 +250,23 @@ label, input {
 
 @media only screen and (max-width: 320px) {
 
- 
+ 	.about-us {
+ 		width: 70%;
+ 	}
+ 	.about-us p {
+ 		font-size: 17px;
+ 	}
+ 	.navbar {
+ 		top: 130px;
+ 		height: 40px;
+ 	}
+ 	.navbar a {
+ 		padding: 10px 10px;
+ 		font-size: 15px;
+ 	}
+ 	.App-title {
+ 		font-size: 30px;
+ 	}
+
 
 } 

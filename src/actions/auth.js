@@ -79,10 +79,12 @@ export const login = (username, password) => dispatch => {
 };
 
 
-export const logout = () => (dispatch) => {
+export const logout = (dispatch) => {
+    console.log(dispatch);
     dispatch(clearAuth);
     localStorage.removeItem('authToken');
     dispatch(logoutSuccess);
+    window.location.reload();
     console.log('logout clicked')
 }
 
