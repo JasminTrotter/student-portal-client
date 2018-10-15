@@ -1,17 +1,26 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+import {logout} from '../actions/auth';
+const {CLIENT_ORIGIN} = require('../config');
+
 
 export function Navbar(props) {
+	console.log(props);
 
 	if(props.authToken !== null) {
 		console.log(props.authToken);
 		return (
 			<nav className="navbar">
-			<Link to="/dashboard">My Account</Link> 
-			<Link to="/">Home</Link> 
+				<a href={`${CLIENT_ORIGIN}/`} onClick={() => { 
+					console.log('onclick ran');
+					props.dispatch(logout);
+					props.history.push('/');
+				}}>Logout</a>
+				<Link to="/dashboard">My Account</Link> 
+				<Link to="/">Home</Link> 
 			    		
-		</nav>
+			</nav>
 		)
 	}
 	return (

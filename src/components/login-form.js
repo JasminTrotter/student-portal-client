@@ -12,7 +12,7 @@ export class LoginForm extends React.Component {
 
 
 	onSubmit(values) {
-		console.log(push);
+		
         const {username, password} = values;
         return this.props
         .dispatch(login(username, password))

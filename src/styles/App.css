@@ -15,11 +15,13 @@
 
 body {
 	background-color: white;
-
+	display: flex;
+  	flex-direction: column;
 }
-.logout-div {
-	width:100%;
 
+.App {
+	width: 100vw;
+	height: 100vh;
 }
 
 .logout-button {
@@ -33,20 +35,15 @@ body {
 	margin-right: 20px;
 }
 
-/*Dashboard Header*/
-.dash-header {
-	position: relative;
-	left: 40px;
-}
-
 .header-div {
-	position: fixed;
+	position: relative;
 	width: 100vw;
 	margin-right: 0;
+	top: 40px;
 }
 
 .App-header {
-	height: 180px;
+	height: 140px;
 	display: flex;
 	flex-wrap: nowrap;
 	padding: 20px;
@@ -66,7 +63,7 @@ body {
 }
 
 .App-logo {
-	height:150px;
+	height:120px;
 	border: #BDBDBD 1px solid;
 	padding: 15px;
 	border-radius: 50%;
@@ -100,19 +97,22 @@ a {
 
 
 main {
-	/*width: 40%;*/
 	margin: auto;
 	text-align: center;
 	margin-bottom: 40px;
 	font-family: 'Roboto', sans-serif;
+	display: block;	
+	min-height: 100%;
 	
 }
 
+
 .App-container {
 	position: absolute;
-	margin-top: 300px;
+	margin-top: 40px;
 	width: 100vw;
 	margin-bottom: 50px;
+
 }
 
 .about-us {
@@ -150,7 +150,6 @@ section {
 
 footer {
 	background-color: #B7DBF5;
-	position: fixed;
     left: 0;
     bottom: 0;
     height: 40px;
@@ -158,6 +157,8 @@ footer {
     overflow: hidden;
     border-top: #404040 5px solid;
     font-family: 'Roboto', sans-serif;
+
+    margin-top: -40px;
 }
 
 footer p {
@@ -198,7 +199,7 @@ fieldset {
 	display: flex;
 }
 
-.form-input input[type="radio"] {
+/*.form-input input[type="radio"] {
 	order: -1;
 }
 
@@ -208,7 +209,7 @@ fieldset {
 
 .form-input label {
 	order: 1;
-}
+}*/
 
 label, input {
 	margin: 10px;
@@ -250,9 +251,9 @@ label, input {
 	.navbar {
 		top: 135px;
 	}
-	.App-container {
+/*	.App-container {
 		margin-top: 200px;
-	}
+	}*/
 } 
 
 
@@ -260,6 +261,7 @@ label, input {
 
  	.about-us {
  		width: 70%;
+
  	}
  	.about-us p {
  		font-size: 17px;
@@ -275,7 +277,6 @@ label, input {
 
  	.homePage {
  		width: 100vw;
- 		position: relative;
  		top: -100px;
  	}
 

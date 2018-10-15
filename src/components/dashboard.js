@@ -14,11 +14,6 @@ export function Dashboard(props) {
 
 		return (
 			<div className="dashboard">
-				<div className=""><button  onClick={() => { 
-					console.log('onclick ran');
-					props.dispatch(logout);
-					props.history.push('/');
-				}}>logout</button></div>
 				<h2 className="dash-header">Dashboard</h2>
 				<div className="greeting">Hello ! </div>
 				<div className="panels" >
