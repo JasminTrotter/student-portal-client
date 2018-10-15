@@ -32,3 +32,23 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #FFF inset;
   transition: background-color 5000s ease-in-out 0s;
 }
+
+@media only screen and (max-width: 425px) {
+	.sign-in {
+
+	width: 50%;
+
+	}
+
+
+}
+
+@media only screen and (max-width: 320px) {
+	.signin-form-input, .sign-in {
+
+		width: 90%;
+
+	}
+
+}
+

@@ -13,7 +13,7 @@ export class ProductSelectForm extends React.Component {
     }
     render() {
 		return (
-			<div className="product-select-form panel">
+			<div className="product-select-form">
 			  <h3 className="panel-header">Select a Package</h3>
 		      <form onSubmit={this.props.handleSubmit(value =>
 	                    this.onSubmit(value)

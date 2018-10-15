@@ -3,7 +3,7 @@ import React from 'react';
 export default function PurchaseHistory(props) {
 
 	return (
-		<div className="panel">
+		<div className="purchase-history-div">
 	      <h3 className="panel-header">Purchase History</h3>
 	      <h5><span>Package</span> | <span>Purchase Date</span></h5>
 	      <ul className="purchase-history-list">

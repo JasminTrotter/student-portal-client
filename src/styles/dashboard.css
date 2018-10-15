@@ -1,19 +1,22 @@
 .dashboard {
 	width: 100vw;
 	margin: auto;
+	position: static;
 }
 
 .panels {
-	width: 100%;
-	columns: 200px 2;
-	justify-content: center;
+	width: 50%;
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	margin-top: 25px;
+
 }
 
 .panel {
 	margin: 30px;
-/*	border-left: #BDBDBD 2px solid;*/
+	border-left: #BDBDBD 2px solid;
+	min-width: 200px;
 }
 
 .purchase-history-list {
@@ -27,5 +30,12 @@
 
 
 @media only screen and (max-width: 320px) {
-
+	.panels {
+		width: 100vw;
+		columns: 1;
+	}
+	.panel {
+		width: 100%;
+		display: block;
+	}
 }

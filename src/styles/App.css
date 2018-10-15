@@ -6,7 +6,12 @@
 #root {
 	position: relative;
 	top: -50px;
+	width: 100vw;
 }
+
+/*.App {
+	width: 100vw;
+}*/
 
 body {
 	background-color: white;
@@ -34,23 +39,24 @@ body {
 	left: 40px;
 }
 
-/*.header-div {
+.header-div {
 	position: fixed;
 	width: 100vw;
-}*/
+	margin-right: 0;
+}
 
 .App-header {
 	height: 180px;
 	display: flex;
 	flex-wrap: nowrap;
 	padding: 20px;
-	width: 100%;
-	position: fixed;
+
 
 	/*dark-grey*/
 	color: #404040;
 	/*baby-blue*/
 	background-color: #B7DBF5;
+
 }
 
 .App-title {
@@ -75,8 +81,6 @@ body {
 	background-color: #404040;
 	padding-right: 25px;
 	color: white;
-	width: 100vw;
-	position: fixed;
 	top: 205px;
 }
 
@@ -225,16 +229,14 @@ label, input {
 }
 
 @media only screen and (max-width: 768px) {
-	.App-container {
-		width: 70%;
-	}
+
 }
 
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 425px) {
 	.App-title {
 
-	  	font-size: 35px;
+	  	font-size: 30px;
 
 	}
 	.App-header {
@@ -244,6 +246,12 @@ label, input {
 	}
 	.App-logo {
 		height: 80%;
+	}
+	.navbar {
+		top: 135px;
+	}
+	.App-container {
+		margin-top: 200px;
 	}
 } 
 
@@ -264,9 +272,7 @@ label, input {
  		padding: 10px 10px;
  		font-size: 15px;
  	}
- 	.App-title {
- 		font-size: 30px;
- 	}
+
  	.homePage {
  		width: 100vw;
  		position: relative;
