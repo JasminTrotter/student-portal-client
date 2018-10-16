@@ -2,14 +2,11 @@ import React from 'react';
 import ProductSelectForm from './product-select-form';
 import PurchaseHistory from './purchase-history';
 import {connect} from 'react-redux';
-import {saveAuthToken, clearAuthToken} from '../local-storage';
-import {logout} from '../actions/auth';
-import {Link, Redirect} from 'react-router-dom';
 import '../styles/dashboard.css';
 
 
 export function Dashboard(props) {
-
+	console.log(props);
 		return (
 			<div className="dashboard">
 				<h2 className="dash-header">Dashboard</h2>
@@ -24,6 +21,7 @@ export function Dashboard(props) {
 }
 
 const mapStateToProps = state => ({
+
 	user: state.auth.currentUser
 })
 

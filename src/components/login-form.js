@@ -3,13 +3,9 @@ import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
 import {login} from '../actions/auth';
 import {fetchProtectedData} from '../actions/protected-data';
-import { push } from 'react-router-redux'
 
-//PUSH is not working to redirect after login
 
 export class LoginForm extends React.Component {
-
-
 
 	onSubmit(values) {
 		
@@ -17,10 +13,10 @@ export class LoginForm extends React.Component {
         return this.props
         .dispatch(login(username, password))
         .then(() => this.props.dispatch(fetchProtectedData()))
-        .then(() => this.props.dispatch(push('/dashboard')));
+        .then(() => this.props.history.push('/dashboard'));
     }
     render() {
-    	console.log(this.props);
+
 		return (
 			<div>
 		      <form className="signin-form" onSubmit={this.props.handleSubmit(values =>

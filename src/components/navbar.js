@@ -6,10 +6,9 @@ const {CLIENT_ORIGIN} = require('../config');
 
 
 export function Navbar(props) {
-	console.log(props);
 
 	if(props.authToken !== null) {
-		console.log(props.authToken);
+
 		return (
 			<nav className="navbar">
 				<a href={`${CLIENT_ORIGIN}/`} onClick={() => { 

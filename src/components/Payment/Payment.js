@@ -3,7 +3,6 @@ import {CardElement, injectStripe} from 'react-stripe-elements';
 import {API_BASE_URL} from '../../config';
 import {connect } from 'react-redux';
 
-console.log(API_BASE_URL);
 class Payment extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +24,10 @@ class Payment extends Component {
   		});
     console.log(response);
 
-  		if (response.ok) this.setState({complete: true});
+  		if (response.ok) {
+        this.setState({complete: true})
+        .then(console.log('token'));
+      }
 	}
 
   render() {

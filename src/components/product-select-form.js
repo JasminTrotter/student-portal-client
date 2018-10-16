@@ -1,9 +1,6 @@
 import React from 'react';
 import {setProduct, setClassAmount, setDollarAmount} from '../actions/product-selection';
-import {connect} from 'react-redux';
 import {Field, reduxForm, focus} from 'redux-form';
-import Input from './input';
-import {fetchProtectedData} from '../actions/protected-data'; 
 
 
 export class ProductSelectForm extends React.Component {
