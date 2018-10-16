@@ -9,15 +9,13 @@ import '../styles/dashboard.css';
 
 
 export function Dashboard(props) {
-	console.log(props);
-
 
 		return (
 			<div className="dashboard">
 				<h2 className="dash-header">Dashboard</h2>
-				<div className="greeting">Hello ! </div>
+				<div className="greeting">Hello {props.user.firstName}! </div>
 				<div className="panels" >
-					<div className="panel" ><ProductSelectForm /></div>
+					<div className="panel" ><ProductSelectForm history={props.history}/></div>
 					<div className="panel" ><PurchaseHistory /></div>
 				</div>
 			</div>
@@ -26,9 +24,8 @@ export function Dashboard(props) {
 }
 
 const mapStateToProps = state => ({
-		// user: state.auth.currentUser
+	user: state.auth.currentUser
 })
 
 export default connect(mapStateToProps)(Dashboard);
 
-//{props.user.firstName}

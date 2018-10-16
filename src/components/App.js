@@ -61,9 +61,6 @@ export default class App extends React.Component {
                         </div>
                       </main>
                   </div>
-                  <footer>
-                    <p>built by Jasmin Trotter</p>
-                  </footer>
                 </div>
               </Router>
             </Elements>

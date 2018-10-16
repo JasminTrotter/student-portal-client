@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import {API_BASE_URL} from '../../config';
+import {connect } from 'react-redux';
+
 console.log(API_BASE_URL);
 class Payment extends Component {
   constructor(props) {
@@ -11,11 +13,15 @@ class Payment extends Component {
 
  	async submit(ev) {
 	  let {token} = await this.props.stripe.createToken({name: "Name"});
+    let product = this.props.value;
     console.log(token);
 	  let response = await fetch(`${API_BASE_URL}/charge`, {
 	    method: "POST",
-	    headers: {"Content-Type": "text/plain"},
-	    body: token.id
+	    headers: {'Content-Type': 'application/json'},
+	    body: JSON.stringify({ 
+        token: token.id,
+        product: product 
+        })
   		});
     console.log(response);
 
@@ -23,9 +29,10 @@ class Payment extends Component {
 	}
 
   render() {
+    console.log(this.props.stripe);
     return (
       <div className="checkout">
-        <p>Would you like to complete the purchase?</p>
+        <p>Enter card number to make your purchase of {this.props.classes} for ${this.props.dollars}</p>
         <CardElement />
         <button onClick={this.submit}>Send</button>
       </div>
@@ -33,4 +40,15 @@ class Payment extends Component {
   }
 }
 
-export default injectStripe(Payment);
+const stripeComponent = injectStripe(Payment);
+
+const mapStateToProps = (state) => ({
+  value: state.setProduct.product,
+  classes: state.setProduct.classAmount,
+  dollars: state.setProduct.dollarAmount
+
+})
+
+export default connect(mapStateToProps)(stripeComponent)
+
+ 
