@@ -1,10 +1,11 @@
-import {SET_PRODUCT, SET_CLASS_AMOUNT, SET_DOLLAR_AMOUNT} from '../actions/product-selection';
+import {SET_PRODUCT, SET_CLASS_AMOUNT, SET_DOLLAR_AMOUNT, SET_DATE} from '../actions/product-selection';
 
 
 const initialState = {
 	product: 0,
 	classAmount: '',
-	dollarAmount: ''
+	dollarAmount: '',
+	date: new Date()
 }
 
 export const setProduct = (state=initialState, action) => {
@@ -17,6 +18,9 @@ export const setProduct = (state=initialState, action) => {
 	}
 	if (action.type === SET_DOLLAR_AMOUNT) {
 		return Object.assign({}, state, {dollarAmount: action.dollarAmount})
+	}
+	if (action.type === SET_DATE) {
+		return Object.assign({}, state, {date: action.date})
 	}
 	else return state;
 }

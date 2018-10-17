@@ -6,13 +6,14 @@ import '../styles/dashboard.css';
 
 
 export function Dashboard(props) {
+
 		return (
 			<div className="dashboard">
 				<h2 className="dash-header">Dashboard</h2>
 				<div className="greeting">Hello {props.user.firstName}! </div>
 				<div className="panels" >
 					<div className="panel" ><ProductSelectForm history={props.history}/></div>
-					<div className="panel" ><PurchaseHistory /></div>
+					<div className="panel" ><PurchaseHistory userId={props.user.id} classAmount={props.setProduct.classAmount} dollarAmount={props.setProduct.dollarAmount} date={props.setProduct.date}/></div>
 				</div>
 			</div>
 		);
@@ -21,8 +22,12 @@ export function Dashboard(props) {
 
 const mapStateToProps = state => ({
 
-	user: state.auth.currentUser
+	user: state.auth.currentUser,
+	setProduct: state.setProduct
+
 })
 
 export default connect(mapStateToProps)(Dashboard);
+
+
 

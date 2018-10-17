@@ -9,7 +9,8 @@ export class ProductSelectForm extends React.Component {
 		this.state = {
 			value: 0,
 			dollarAmount: '',
-			classAmount: ''
+			classAmount: '',
+			date: new Date()
 		}
 	}
 
