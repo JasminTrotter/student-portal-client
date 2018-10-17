@@ -6,7 +6,6 @@ import '../styles/dashboard.css';
 
 
 export function Dashboard(props) {
-	console.log(props);
 		return (
 			<div className="dashboard">
 				<h2 className="dash-header">Dashboard</h2>

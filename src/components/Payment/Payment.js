@@ -13,21 +13,22 @@ class Payment extends Component {
  	async submit(ev) {
 	  let {token} = await this.props.stripe.createToken({name: "Name"});
     let product = this.props.value;
+    let description = this.props.classes;
     console.log(token);
 	  let response = await fetch(`${API_BASE_URL}/charge`, {
 	    method: "POST",
 	    headers: {'Content-Type': 'application/json'},
 	    body: JSON.stringify({ 
         token: token.id,
-        product: product 
+        product: product,
+        description: description
         })
   		});
     console.log(response);
 
-  		if (response.ok) {
-        this.setState({complete: true})
-        .then(console.log('token'));
-      }
+  		if (response.ok) this.setState({complete: true});
+
+
 	}
 
   render() {

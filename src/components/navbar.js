@@ -12,10 +12,8 @@ export function Navbar(props) {
 		return (
 			<nav className="navbar">
 				<a href={`${CLIENT_ORIGIN}/`} onClick={() => { 
-					console.log('onclick ran');
 					props.dispatch(logout);
-					props.history.push('/');
-				}}>Logout</a>
+					}}>Logout</a>
 				<Link to="/dashboard">My Account</Link> 
 				<Link to="/">Home</Link> 
 			    		
