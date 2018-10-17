@@ -11,6 +11,7 @@ class Payment extends Component {
   }
 
  	async submit(ev) {
+    console.log(this.props);
 	  let {token} = await this.props.stripe.createToken({name: "Name"});
     let product = this.props.value;
     let description = this.props.classes;
@@ -28,6 +29,9 @@ class Payment extends Component {
 
   		if (response.ok) this.setState({complete: true});
 
+      this.props.history.push('/dashboard', {
+        dollars: this.props.dollars
+      });
 
 	}
 
