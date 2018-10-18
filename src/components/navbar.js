@@ -2,7 +2,6 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {logout} from '../actions/auth';
-const {CLIENT_ORIGIN} = require('../config');
 
 
 export function Navbar(props) {
@@ -11,8 +10,9 @@ export function Navbar(props) {
 
 		return (
 			<nav className="navbar">
-				<a href={`${CLIENT_ORIGIN}/`} onClick={() => { 
+				<a onClick={() => { 
 					props.dispatch(logout);
+					props.history.push('/');
 					}}>Logout</a>
 				<Link to="/dashboard">My Account</Link> 
 				<Link to="/">Home</Link> 
