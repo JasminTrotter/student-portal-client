@@ -6,7 +6,7 @@ import '../styles/dashboard.css';
 
 
 export function Dashboard(props) {
-
+	
 		return (
 			<div className="dashboard">
 				<h2 className="dash-header">Dashboard</h2>
@@ -26,6 +26,7 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(Dashboard);
+
 
 
 

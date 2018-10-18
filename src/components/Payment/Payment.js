@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import {API_BASE_URL} from '../../config';
 import {connect } from 'react-redux';
+import {saveClasses, saveAmountPaid, savePurchaseDate} from '../../local-storage';
+var moment = require('moment');
 
 class Payment extends Component {
   constructor(props) {
@@ -29,12 +31,16 @@ class Payment extends Component {
 
   		if (response.ok) this.setState({complete: true});
 
+      saveClasses(this.props.classes);
+      saveAmountPaid(this.props.dollars);
+      let date = new moment().format("MMM Do YYYY");
+      savePurchaseDate(date);
       this.props.history.push('/dashboard');
-
+      
 	}
 
   render() {
-    console.log(this.props.stripe);
+
     return (
       <div className="checkout">
         <p>Enter card number to make your purchase of {this.props.classes} for ${this.props.dollars}</p>

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {setProduct, setClassAmount, setDollarAmount} from '../actions/product-selection';
+import {removeClasses, removeAmountPaid, removePurchaseDate} from '../local-storage';
 
 const {API_BASE_URL} = require('../config');
 
@@ -16,12 +17,13 @@ export class PurchaseHistory extends React.Component {
 	
 	componentDidMount() {
 
-		const { userId, date } = this.props;
-		const paid = this.props.dollarAmount;
-		const classes = this.props.classAmount;
+		const {userId} = this.props;
+		const paid = localStorage.getItem('amountPaid');
+		const classes = localStorage.getItem('classes');
+		const date = localStorage.getItem('purchaseDate');
 
 
-		if (this.props.classAmount === '') {
+		if (localStorage.getItem('classes') === null) {
 			this.getHistory(userId);
 		}
 		else {
@@ -52,12 +54,16 @@ export class PurchaseHistory extends React.Component {
 		.then(this.props.dispatch(setProduct(0)))
 		.then(this.props.dispatch(setClassAmount('')))
 		.then(this.props.dispatch(setDollarAmount('')))
+		.then(removeClasses())
+		.then(removePurchaseDate())
+		.then(removeAmountPaid())
 		.then(this.getHistory(userId));
 	}
 
 	
 	getHistory(userId) {
 		const authToken = localStorage.getItem('authToken');
+
 		const request = new Request(`${API_BASE_URL}/purchase-history/${userId}`, {
 			headers: new Headers({
     			'Content-Type': 'application/json',

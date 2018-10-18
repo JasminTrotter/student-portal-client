@@ -5,8 +5,6 @@ import LoginForm from './login-form';
 import '../styles/login.css';
 
 export function Login(props) {
-
-console.log(props);
    
     return (
         <div className="sign-in">
