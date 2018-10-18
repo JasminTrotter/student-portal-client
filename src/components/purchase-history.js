@@ -14,11 +14,9 @@ export default class PurchaseHistory extends React.Component {
 	
 	componentDidMount() {
 
-		const userId = this.props.userId;
+		const { userId, date } = this.props;
 		const paid = this.props.dollarAmount;
 		const classes = this.props.classAmount;
-		const date = this.props.date;
-
 
 
 		if (this.props.classAmount === '') {
@@ -44,7 +42,8 @@ export default class PurchaseHistory extends React.Component {
     				userId: userId,
     				purchaseDate: date,
     				package: classes,
-    				amountPaid: paid
+    				amountPaid: paid,
+    				id: Math.random().toString()
   				})
 		})
 		.then(res => res.json())
@@ -63,12 +62,12 @@ export default class PurchaseHistory extends React.Component {
 		fetch(request)
 	      .then(res => res.json())
 	      .then(
-	        (result) => {
+	        (res) => {
 	          this.setState({
 	            isLoaded: true,
-	            items: result
+	            items: res
 	          });
-	          console.log(result);
+	          console.log(res);
 	        },
 	        // Note: it's important to handle errors here
 	        // instead of a catch() block so that we don't swallow
@@ -83,9 +82,22 @@ export default class PurchaseHistory extends React.Component {
 	}
 
 	render() {
-		console.log(this.state.items);
-		const items = this.state.items;
-		if(items.length === 0) {
+		const { error, isLoaded, items } = this.state;
+		
+		//trying to figure out why the key is not showing up in the `li` down below
+		items.map(item => (console.log(item.id)))
+
+	    if (error) {
+
+	      return <div>Error: {error.message}</div>;
+
+	    } 
+	    else if (!isLoaded) {
+
+	      return <div>Loading...</div>;
+
+	    } 
+	    else if (items.length === 0) {
 			return (
 				<div className="purchase-history-div">
 		      		<h3 className="panel-header">Purchase History</h3>
@@ -96,17 +108,24 @@ export default class PurchaseHistory extends React.Component {
 	   			</div>
 			);
 		}
-		else {
-			return (
-				<div className="purchase-history-div">
-			      <h3 className="panel-header">Purchase History</h3>
-			      <h5><span>Package</span> | <span>Amount Paid</span> | <span>Purchase Date</span></h5>
-			      <ul className="purchase-history-list">
-			        <li><span className="package">8 Classes</span> | <span className="date">9/1/18</span></li>
-			        <li><span className="package">4 Classes</span> | <span className="date">8/1/18</span></li>
-			      </ul>
-		   		</div>
-			);
+	    else {
+	      return (
+	      	<div className="purchase-history-div">
+		 		<h3 className="panel-header">Purchase History</h3>
+				<h5><span>Package</span> | <span>Amount Paid</span> | <span>Purchase Date</span></h5>
+
+	        	<ul className="purchase-history-list">
+		        	{items.map(item => (
+			        	<li key={item.id}>
+		              {item.package} | ${item.amountPaid} | {item.purchaseDate}
+		            	</li>
+	            	))}
+	       		</ul>
+	       	</div>
+	      );
+
 		}
+
 	}
 }
+
