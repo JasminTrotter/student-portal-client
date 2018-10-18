@@ -5,7 +5,7 @@ const initialState = {
 	product: 0,
 	classAmount: '',
 	dollarAmount: '',
-	date: new Date()
+	date: ''
 }
 
 export const setProduct = (state=initialState, action) => {

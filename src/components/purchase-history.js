@@ -7,7 +7,6 @@ const {API_BASE_URL} = require('../config');
 export class PurchaseHistory extends React.Component {
 	constructor(props) {
 		super(props);
-		console.log(props);
 		this.state = {
 			error: null,
       		isLoaded: false,
@@ -73,7 +72,6 @@ export class PurchaseHistory extends React.Component {
 	            isLoaded: true,
 	            items: res
 	          });
-	          console.log(res);
 	        },
 	        // Note: it's important to handle errors here
 	        // instead of a catch() block so that we don't swallow
