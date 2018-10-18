@@ -21,10 +21,8 @@ export function Dashboard(props) {
 }
 
 const mapStateToProps = state => ({
-
 	user: state.auth.currentUser,
 	setProduct: state.setProduct
-
 })
 
 export default connect(mapStateToProps)(Dashboard);
