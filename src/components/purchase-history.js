@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {setProduct, setClassAmount, setDollarAmount} from '../actions/product-selection';
+
 const {API_BASE_URL} = require('../config');
 
-export default class PurchaseHistory extends React.Component {
+export class PurchaseHistory extends React.Component {
 	constructor(props) {
 		super(props);
 		console.log(props);
@@ -47,6 +50,9 @@ export default class PurchaseHistory extends React.Component {
   				})
 		})
 		.then(res => res.json())
+		.then(this.props.dispatch(setProduct(0)))
+		.then(this.props.dispatch(setClassAmount('')))
+		.then(this.props.dispatch(setDollarAmount('')))
 		.then(this.getHistory(userId));
 	}
 
@@ -129,3 +135,4 @@ export default class PurchaseHistory extends React.Component {
 	}
 }
 
+export default connect()(PurchaseHistory);
