@@ -1,6 +1,7 @@
 import React from 'react';
-import {setProduct, setClassAmount, setDollarAmount} from '../actions/product-selection';
+import {setProduct, setClassAmount, setDollarAmount, setDate} from '../actions/product-selection';
 import {Field, reduxForm, focus} from 'redux-form';
+var moment = require('moment');
 
 
 export class ProductSelectForm extends React.Component {
@@ -10,7 +11,7 @@ export class ProductSelectForm extends React.Component {
 			value: 0,
 			dollarAmount: '',
 			classAmount: '',
-			date: new Date()
+			date: new moment().format("MMM Do YYYY")
 		}
 	}
 
@@ -18,6 +19,7 @@ export class ProductSelectForm extends React.Component {
 		this.props.dispatch(setProduct(this.state.value));
 		this.props.dispatch(setClassAmount(this.state.classAmount));
 		this.props.dispatch(setDollarAmount(this.state.dollarAmount));
+		this.props.dispatch(setDate(this.state.date));
 		this.props.history.push('/payment');
     }
     render() {

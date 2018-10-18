@@ -29,9 +29,7 @@ class Payment extends Component {
 
   		if (response.ok) this.setState({complete: true});
 
-      this.props.history.push('/dashboard', {
-        dollars: this.props.dollars
-      });
+      this.props.history.push('/dashboard');
 
 	}
 

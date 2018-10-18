@@ -13,10 +13,12 @@ export default class PurchaseHistory extends React.Component {
 	}
 	
 	componentDidMount() {
+
 		const userId = this.props.userId;
 		const paid = this.props.dollarAmount;
-		const classes = this.props.classesAmount;
+		const classes = this.props.classAmount;
 		const date = this.props.date;
+
 
 
 		if (this.props.classAmount === '') {
@@ -28,6 +30,7 @@ export default class PurchaseHistory extends React.Component {
 	}
 
 	postPurchase(userId, paid, classes, date) {
+
 		const authToken = localStorage.getItem('authToken');
 
 		fetch(`${API_BASE_URL}/purchase-history/`, {
@@ -39,8 +42,8 @@ export default class PurchaseHistory extends React.Component {
 	  			},
 				body: JSON.stringify({
     				userId: userId,
-    				package: classes,
     				purchaseDate: date,
+    				package: classes,
     				amountPaid: paid
   				})
 		})
