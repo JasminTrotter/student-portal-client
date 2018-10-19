@@ -8,18 +8,12 @@ import Login from './login';
 
 export class Dashboard extends React.Component {
 
-	constructor(props) {
-		super(props);
-
-	}
-		
-
-
 render() {
 	const firstName = localStorage.getItem('firstName');
 	const userId = localStorage.getItem('userId');
 	const authToken = localStorage.getItem('authToken');
 		if(authToken) {
+
 			return (
 
 				<div className="dashboard">

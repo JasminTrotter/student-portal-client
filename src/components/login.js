@@ -12,13 +12,13 @@ export function Login(props) {
    		return <Dashboard />
    	}
    	else {
-    return (
-        <div className="sign-in">
-            <h2>Sign In</h2>
-            <LoginForm history={props.history}/>
-            <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
-        </div>
-    );
+	    return (
+	        <div className="sign-in">
+	            <h2>Sign In</h2>
+	            <LoginForm history={props.history}/>
+	            <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+	        </div>
+	    );
 
 		
 	}

@@ -14,12 +14,14 @@ export class LoginForm extends React.Component {
         return this.props
         .dispatch(login(username, password))
         .then(() => this.props.dispatch(fetchProtectedData()))
+        .then(() => window.location.reload())
         .then(() => this.props.history.push('/dashboard'));
+
     }
 
 
     render() {
-console.log(this.props);
+
 		return (
 
 

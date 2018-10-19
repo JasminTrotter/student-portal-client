@@ -7,9 +7,8 @@ import { Redirect } from 'react-router-dom'
 
 export class Navbar extends React.Component {
 
-	onClick() { 
+	onClick(ev) { 
 		
-
 		this.props.dispatch(logout);
 		this.setState({authToken: null});
 		window.location.reload();
@@ -22,7 +21,7 @@ export class Navbar extends React.Component {
 
 			return (
 				<nav className="navbar">
-					<a onClick={() => this.onClick()}>Logout</a>
+					<a onClick={(ev) => this.onClick(ev)}>Logout</a>
 					<Link to="/dashboard">My Account</Link> 
 					<Link to="/">Home</Link> 
 				    		
