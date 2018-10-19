@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {logout} from '../actions/auth';
+import { Redirect } from 'react-router-dom'
 
 
 export class Navbar extends React.Component {
@@ -14,7 +15,7 @@ export class Navbar extends React.Component {
 
 		this.props.dispatch(logout);
 		this.setState({authToken: null});
-		//this.props.history.push('/');
+		window.location.reload();
 
 	}
 
@@ -46,4 +47,4 @@ const mapStateToProps = state => ({
 	authToken: state.auth.authToken
 })
 
-export default connect(mapStateToProps)(Navbar)
+export default connect(mapStateToProps)(Navbar);

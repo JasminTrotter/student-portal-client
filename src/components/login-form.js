@@ -14,6 +14,7 @@ export class LoginForm extends React.Component {
         return this.props
         .dispatch(login(username, password))
         .then(() => this.props.dispatch(fetchProtectedData()))
+        .then(() => this.props.history.push('/navbar'))
         .then(() => this.props.history.push('/dashboard'));
 
         
@@ -21,6 +22,8 @@ export class LoginForm extends React.Component {
     render() {
 console.log(this.props);
 		return (
+
+
 			<div>
 		      <form className="signin-form" onSubmit={this.props.handleSubmit(values =>
 	                    this.onSubmit(values)
@@ -44,6 +47,7 @@ console.log(this.props);
 		        <button type="submit">Submit</button>
 		      </form>
 		    </div>
+
 		);
 	}
 }

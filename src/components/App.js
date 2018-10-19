@@ -57,7 +57,7 @@ export default class App extends React.Component {
                           <Route exact path="/signup" component={SignUp} />
                           <Route exact path="/dashboard" component={Dashboard} />
                           <Route exact path="/payment" component={Payment} />
-                          
+                          <Route exact path="/navbar" component={Navbar} />
                           
                         </div>
                       </main>
