@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Header from './header';
 import Home from './home';
 import Dashboard from './dashboard';
-import Navbar from './navbar';
 import Login from './login';
 import SignUp from './signup';
 import {refreshAuthToken} from '../actions/auth';
@@ -57,7 +56,7 @@ export default class App extends React.Component {
                           <Route exact path="/signup" component={SignUp} />
                           <Route exact path="/dashboard" component={Dashboard} />
                           <Route exact path="/payment" component={Payment} />
-                          <Route exact path="/navbar" component={Navbar} />
+          
                           
                         </div>
                       </main>
