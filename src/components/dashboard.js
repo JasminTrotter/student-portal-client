@@ -5,19 +5,30 @@ import {connect} from 'react-redux';
 import '../styles/dashboard.css';
 
 
-export function Dashboard(props) {
-	
+export class Dashboard extends React.Component {
+
+	constructor(props) {
+		super(props);
+
+	}
+		
+
+
+render() {
+	const firstName = localStorage.getItem('firstName');
+		const userId = localStorage.getItem('userId');
 		return (
+
 			<div className="dashboard">
 				<h2 className="dash-header">Dashboard</h2>
-				<div className="greeting">Hello {props.user.firstName}! </div>
+				<div className="greeting">Hello {firstName}! </div>
 				<div className="panels" >
-					<div className="panel" ><ProductSelectForm history={props.history}/></div>
-					<div className="panel" ><PurchaseHistory userId={props.user.id} classAmount={props.setProduct.classAmount} dollarAmount={props.setProduct.dollarAmount} date={props.setProduct.date}/></div>
+					<div className="panel" ><ProductSelectForm history={this.props.history}/></div>
+					<div className="panel" ><PurchaseHistory userId={userId} classAmount={this.props.setProduct.classAmount} dollarAmount={this.props.setProduct.dollarAmount} date={this.props.setProduct.date}/></div>
 				</div>
 			</div>
 		);
-
+}
 }
 
 const mapStateToProps = state => ({

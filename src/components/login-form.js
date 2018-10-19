@@ -3,6 +3,7 @@ import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
 import {login} from '../actions/auth';
 import {fetchProtectedData} from '../actions/protected-data';
+import Navbar from './navbar';
 
 
 export class LoginForm extends React.Component {
@@ -14,9 +15,11 @@ export class LoginForm extends React.Component {
         .dispatch(login(username, password))
         .then(() => this.props.dispatch(fetchProtectedData()))
         .then(() => this.props.history.push('/dashboard'));
+
+        
     }
     render() {
-
+console.log(this.props);
 		return (
 			<div>
 		      <form className="signin-form" onSubmit={this.props.handleSubmit(values =>

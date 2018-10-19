@@ -16,6 +16,7 @@ export class ProductSelectForm extends React.Component {
 	}
 
 	onSubmit(value) {
+
 		this.props.dispatch(setProduct(this.state.value));
 		this.props.dispatch(setClassAmount(this.state.classAmount));
 		this.props.dispatch(setDollarAmount(this.state.dollarAmount));
@@ -23,7 +24,7 @@ export class ProductSelectForm extends React.Component {
 		this.props.history.push('/payment');
     }
     render() {
-
+console.log(this.props);
 		return (
 			<div className="product-select-form">
 			  <h3 className="panel-header">Select a Package</h3>
