@@ -6,9 +6,6 @@ import { Redirect } from 'react-router-dom'
 
 
 export class Navbar extends React.Component {
-	constructor(props) {
-		super(props);
-	}
 
 	onClick() { 
 		
@@ -20,7 +17,7 @@ export class Navbar extends React.Component {
 	}
 
 	render() {
-		console.log(this.props);
+
 		if(this.props.authToken !== null && localStorage.getItem('authToken') !== null) {
 
 			return (

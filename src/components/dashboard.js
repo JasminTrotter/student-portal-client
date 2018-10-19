@@ -3,7 +3,7 @@ import ProductSelectForm from './product-select-form';
 import PurchaseHistory from './purchase-history';
 import {connect} from 'react-redux';
 import '../styles/dashboard.css';
-import Home from './home';
+import Login from './login';
 
 
 export class Dashboard extends React.Component {
@@ -17,8 +17,8 @@ export class Dashboard extends React.Component {
 
 render() {
 	const firstName = localStorage.getItem('firstName');
-		const userId = localStorage.getItem('userId');
-const authToken = localStorage.getItem('authToken');
+	const userId = localStorage.getItem('userId');
+	const authToken = localStorage.getItem('authToken');
 		if(authToken) {
 			return (
 
@@ -33,7 +33,7 @@ const authToken = localStorage.getItem('authToken');
 			);
 		}
 		else {
-			return <Home />
+			return <Login />
 		}
 	}
 }
