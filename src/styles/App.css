@@ -118,6 +118,7 @@ button {
 	background-color: #979ACE;
 	color: black;
 	margin-top: 10px;
+	z-index: -1;
 }
 
 .form-error {
