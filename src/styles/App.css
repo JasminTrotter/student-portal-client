@@ -89,6 +89,7 @@ body {
 a {
 	text-decoration: none;
 	cursor: pointer;
+	color: #4B4FA0;
 }
 
 
@@ -121,10 +122,14 @@ button {
 .about-us {
 	width: 40%;
 	margin: auto;
-
+	padding-top: 50px;
 }
 
-h1, h2, h3 {
+.about-us p {
+	line-height: 30px;
+}
+
+h1, h2, h3, .about-us a {
 	font-family: 'Bebas';
 	color: #2E3384;
 }
@@ -256,16 +261,15 @@ label, input {
 	.navbar {
 		top: 135px;
 	}
+	.about-us {
+		width: 70%;
+	}
 
 } 
 
 
 @media only screen and (max-width: 320px) {
 
- 	.about-us {
- 		width: 70%;
-
- 	}
  	.about-us p {
  		font-size: 17px;
  	}
