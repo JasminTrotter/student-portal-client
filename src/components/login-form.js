@@ -19,13 +19,17 @@ export class LoginForm extends React.Component {
 
 
     render() {
-
+console.log(this.props);
     	let loginFailMessage;
+    	let loadingMessage;
 
 		//get message from props in reducer if user fails to post
 
     	if (this.props.error) {
       		loginFailMessage = <div className="form-error">{this.props.error}</div>
+    	}
+    	else if (this.props.submitting) {
+    		loadingMessage = <div className="form-success">Loading your account...</div>
     	}	
 
 		return (
@@ -35,6 +39,7 @@ export class LoginForm extends React.Component {
 		      <form className="signin-form" onSubmit={this.props.handleSubmit(values =>
 	                    this.onSubmit(values)
 	                )}>
+
 		      		{loginFailMessage}
 	                <Field
 	                	className="signin-form-input"
@@ -55,6 +60,7 @@ export class LoginForm extends React.Component {
 	                                   
             		/>
 		        <button type="submit">Submit</button>
+		        {loadingMessage}
 		      </form>
 		    </div>
 

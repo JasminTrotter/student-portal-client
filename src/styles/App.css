@@ -124,6 +124,11 @@ button {
 	color: red;
 }
 
+.form-success {
+	color: green;
+	margin-top: 15px;
+}
+
 .App-container {
 	position: absolute;
 	margin-top: 40px;
