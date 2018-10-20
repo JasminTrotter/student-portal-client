@@ -33,37 +33,38 @@ export class ProductSelectForm extends React.Component {
 	                )}>
 		      <fieldset>
 		        	<div className="product-select-input">
-
-		                <Field
-		                	
-		                    component="input"
+		        		<label>
+		                <input
+		                   	required={true}
 		                    type="radio"
 		                    name="price"
 		                    label="8 Classes - $120"
 		                    value={120}
 		                    onChange={(event) => this.setState({ value: 12000, dollarAmount: '120', classAmount: '8 classes'})}
 		                />
-		                <label>8 Classes - $120</label>
+		                8 Classes - $120</label>
 	                </div>
 	             	
 	            
 		        	<div className="product-select-input">
-		                <Field
+		        		<label>
+		                <input
 		                	
-		                    component="input"
+		               		required={true}
 		                    type="radio"
 		                    name="price"
 		                    label="4 Classes - $62"
 		                    value={62}
 		                    onChange={(event) => this.setState({ value: 6200, dollarAmount: '62', classAmount: '4 classes'})}
 		                />
-	                <label>4 Classes - $62</label>
+	                	4 Classes - $62</label>
 	                </div>
 
 					<div className="product-select-input">
-		                <Field
+						<label>
+		                <input
 		                	
-		                    component="input"
+		                  	required={true}
 		                    type="radio"
 		                    name="price"
 		                    label="2 Classes - $32"
@@ -71,20 +72,21 @@ export class ProductSelectForm extends React.Component {
 		                    onChange={(event) => this.setState({ value: 3200, dollarAmount: '32', classAmount: '2 classes'})}
 
 		                />
-	                <label>2 Classes - $32</label>
+	                	2 Classes - $32</label>
 	                </div>
 
 	                <div className="product-select-input">
-		                <Field
+	                	<label>
+		                <input
 
-		                    component="input"
+		                 	required={true}
 		                    type="radio"
 		                    name="price"
 		                    label="1 Class - $18"
 		                    value={18}
 		                    onChange={(event) => this.setState({ value: 1800, dollarAmount: '18', classAmount: '1 class' })}
 		                />
-		                <label>1 Class - $18</label>
+		                1 Class - $18</label>
 	                </div>
 
 		        <button type="submit">Submit</button>

@@ -16,11 +16,15 @@
 .panel {
 	margin: 30px;
 	border-left: #BDBDBD 2px solid;
-	min-width: 200px;
+	width: 400px;
 }
 
 .purchase-history-list {
 	list-style: none;
+}
+
+.purchase-history-list p {
+	font-size: 
 }
 
 .purchase-history-list li {
@@ -29,8 +33,13 @@
 
 .product-select-input {
 	justify-content: left;
+	cursor: pointer;
+	text-align: left;
 }
 
+.purchase-history-div {
+	margin-left: 10px;
+}
 
 
 @media only screen and (max-width: 320px) {
