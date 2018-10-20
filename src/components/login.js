@@ -13,10 +13,18 @@ export default function Login() {
    	}
    	else {
 	    return (
-	        <div className="sign-in">
+	    	<div>
+	        <section className="sign-in">
 	            <h2>Sign In</h2>
 	            <LoginForm />
 	            <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+
+	        </section>
+	        <section className="demo-info">
+    			<h3>For a demo, use the login credentials...</h3>
+    			<p>username: <i>DemoUser</i></p>
+    			<p>password: <i>ballerinasRcool</i></p>
+    		</section>
 	        </div>
 	    );
 

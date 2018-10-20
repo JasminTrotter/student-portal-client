@@ -86,6 +86,15 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+.demo-info {
+	border: #B7DBF5 solid 2px;
+	border-radius: 3px;
+	background-color: #B7DBF5;
+	position: absolute;
+	top: 400px;
+	width: 100%;
+}
+
 a {
 	text-decoration: none;
 	cursor: pointer;
@@ -109,6 +118,10 @@ button {
 	background-color: #979ACE;
 	color: black;
 	margin-top: 10px;
+}
+
+.form-error {
+	color: red;
 }
 
 .App-container {
@@ -264,7 +277,9 @@ label, input {
 	.about-us {
 		width: 70%;
 	}
-
+ 	.demo-info {
+ 		top: 500px;
+ 	}
 } 
 
 
@@ -286,6 +301,7 @@ label, input {
  		width: 100vw;
  		top: -100px;
  	}
+
 
 
 } 
