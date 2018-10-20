@@ -1,6 +1,6 @@
 import React from 'react';
 import {setProduct, setClassAmount, setDollarAmount, setDate} from '../actions/product-selection';
-import {Field, reduxForm, focus} from 'redux-form';
+import {reduxForm, focus} from 'redux-form';
 var moment = require('moment');
 
 

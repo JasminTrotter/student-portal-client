@@ -3,11 +3,6 @@ import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
 import {login} from '../actions/auth';
 
-function hasWhiteSpace(string) {
-  return string.indexOf(" ") >= 0;
-}
-
-
 export class LoginForm extends React.Component {
 
 
