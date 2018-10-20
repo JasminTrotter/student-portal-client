@@ -2,10 +2,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 
-import Input from './input';
+import CardSection from './CardSection';
 
-describe('<Input />', () => {
+describe('<CardSection />', () => {
   it('Renders without crashing', () => {
-    shallow(<Input />);
+    shallow(<CardSection />);
   });
-});
+ });

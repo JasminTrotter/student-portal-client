@@ -5,7 +5,7 @@ import LoginForm from './login-form';
 import '../styles/login.css';
 import Dashboard from './dashboard';
 
-export function Login(props) {
+export default function Login() {
    const authToken = localStorage.getItem('authToken');
 
    if (authToken) {
@@ -15,7 +15,7 @@ export function Login(props) {
 	    return (
 	        <div className="sign-in">
 	            <h2>Sign In</h2>
-	            <LoginForm history={props.history}/>
+	            <LoginForm />
 	            <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
 	        </div>
 	    );
@@ -25,4 +25,3 @@ export function Login(props) {
 
 }
 
-export default connect()(Login);
