@@ -3,7 +3,6 @@ import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
 import {login} from '../actions/auth';
 import {fetchProtectedData} from '../actions/protected-data';
-import Navbar from './navbar';
 
 
 export class LoginForm extends React.Component {

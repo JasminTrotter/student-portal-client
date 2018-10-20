@@ -8,3 +8,4 @@ describe('<Navbar />', () => {
   it('Renders without crashing', () => {
     shallow(<Navbar />);
   });
+});

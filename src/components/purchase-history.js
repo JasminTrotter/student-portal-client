@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import {setProduct, setClassAmount, setDollarAmount} from '../actions/product-selection';
 import {removeClasses, removeAmountPaid, removePurchaseDate} from '../local-storage';

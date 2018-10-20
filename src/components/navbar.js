@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import React from 'react';
+import { Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {logout} from '../actions/auth';
-import { Redirect } from 'react-router-dom'
+
 
 
 export class Navbar extends React.Component {

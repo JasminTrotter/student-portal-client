@@ -5,6 +5,7 @@ import { shallow } from 'enzyme';
 import { SignUp } from './signup';
 
 describe('<SignUp />', () => {
-  it('Renders without crashing', () => {
-    shallow(<SignUp />);
-  });
+	  it('Renders without crashing', () => {
+	    shallow(<SignUp />);
+	  });
+});
