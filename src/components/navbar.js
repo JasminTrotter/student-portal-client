@@ -2,26 +2,33 @@ import React from 'react';
 import { Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {logout} from '../actions/auth';
-
+import Home from './home';
 
 
 export class Navbar extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			loggedIn: true
+		}
+	}
 
 	onClick(ev) { 
 		
 		this.props.dispatch(logout);
-		this.setState({authToken: null});
-		window.location.reload();
+		this.setState({loggedIn: false});
+		
 
 	}
 
 	render() {
+		console.log(this.props);
 
 		if(this.props.authToken !== null && localStorage.getItem('authToken') !== null) {
 
 			return (
 				<nav className="navbar">
-					<a onClick={(ev) => this.onClick(ev)}>Logout</a>
+					<Link to="/" onClick={(ev) => this.onClick(ev)}>Logout</Link>
 					<Link to="/dashboard">My Account</Link> 
 					<Link to="/">Home</Link> 
 				    		

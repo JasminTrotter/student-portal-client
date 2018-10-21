@@ -15,22 +15,23 @@ export class ProductSelectForm extends React.Component {
 		}
 	}
 
-	onSubmit(value) {
 
-		this.props.history.push('/payment');
+	onSubmit(e, value) {
+		e.preventDefault();
 		this.props.dispatch(setProduct(this.state.value));
 		this.props.dispatch(setClassAmount(this.state.classAmount));
 		this.props.dispatch(setDollarAmount(this.state.dollarAmount));
 		this.props.dispatch(setDate(this.state.date));
+		this.props.history.push('/payment');
 		
     }
     render() {
-
+console.log(this.props);
 		return (
 			<div className="product-select-form">
 			  <h3 className="panel-header">Select a Package</h3>
-		      <form onSubmit={value =>
-	                    this.onSubmit(value)
+		      <form onSubmit={(e, value) =>
+	                    this.onSubmit(e, value)
 	                }>
 		      <fieldset>
 		        	<div className="product-select-input">

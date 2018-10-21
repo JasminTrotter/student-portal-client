@@ -8,27 +8,28 @@ import Login from './login';
 
 export class Dashboard extends React.Component {
 
-render() {
-	const firstName = localStorage.getItem('firstName');
-	const userId = localStorage.getItem('userId');
-	const authToken = localStorage.getItem('authToken');
-		if(authToken) {
+	render() {
+		console.log(this.props);
+		const firstName = localStorage.getItem('firstName');
+		const userId = localStorage.getItem('userId');
+		const authToken = localStorage.getItem('authToken');
+			if(authToken) {
 
-			return (
+				return (
 
-				<div className="dashboard">
-					<h2 className="dash-header">Dashboard</h2>
-					<div className="greeting">Hello {firstName}! </div>
-					<div className="panels" >
-						<div className="panel" ><ProductSelectForm history={this.props.history}/></div>
-						<div className="panel" ><PurchaseHistory userId={userId} classAmount={this.props.setProduct.classAmount} dollarAmount={this.props.setProduct.dollarAmount} date={this.props.setProduct.date}/></div>
+					<div className="dashboard">
+						<h2 className="dash-header">Dashboard</h2>
+						<div className="greeting">Hello {firstName}! </div>
+						<div className="panels" >
+							<div className="panel" ><ProductSelectForm history={this.props.history}/></div>
+							<div className="panel" ><PurchaseHistory userId={userId} classAmount={this.props.setProduct.classAmount} dollarAmount={this.props.setProduct.dollarAmount} date={this.props.setProduct.date}/></div>
+						</div>
 					</div>
-				</div>
-			);
-		}
-		else {
-			return <Login />
-		}
+				);
+			}
+			else {
+				return <Login />
+			}
 	}
 }
 

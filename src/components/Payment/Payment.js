@@ -1,11 +1,12 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import {API_BASE_URL} from '../../config';
 import {connect } from 'react-redux';
 import {saveClasses, saveAmountPaid, savePurchaseDate} from '../../local-storage';
+import Home from '../home';
 var moment = require('moment');
 
-class Payment extends Component {
+class Payment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {complete: false};
@@ -40,6 +41,11 @@ class Payment extends Component {
 	}
 
   render() {
+    const authToken = localStorage.getItem('authToken');
+
+    if(!authToken) {
+      return <Home />
+    }
 
     return (
       <div className="checkout">

@@ -4,14 +4,20 @@ import Input from './input';
 import {login} from '../actions/auth';
 
 export class LoginForm extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			username: '',
+			password: ''
+		}
+	}
 
+	onSubmit() {
 
-	onSubmit(values) {
+		const {username, password} = this.state;
 
-		const {username, password} = values;
         return this.props
         .dispatch(login(username, password))
-        .then(() => window.location.reload())
         .then(() => this.props.history.push('/dashboard'));
         
 
@@ -19,7 +25,7 @@ export class LoginForm extends React.Component {
 
 
     render() {
-console.log(this.props);
+
     	let loginFailMessage;
     	let loadingMessage;
 
@@ -36,8 +42,8 @@ console.log(this.props);
 
 
 			<div>
-		      <form className="signin-form" onSubmit={this.props.handleSubmit(values =>
-	                    this.onSubmit(values)
+		      <form className="signin-form" onSubmit={this.props.handleSubmit(() =>
+	                    this.onSubmit()
 	                )}>
 
 		      		{loginFailMessage}
@@ -47,6 +53,7 @@ console.log(this.props);
 	                    type="text"
 	                    name="username"
 	                    label="Username"
+	                    onChange={(event) => this.setState({ username: event.target.value})}
 	             
 	                />
 		        	
@@ -57,7 +64,7 @@ console.log(this.props);
 	                    type="password"
 	                    name="password"
 	                    label="Password"
-	                                   
+	                    onChange={(event) => this.setState({ password: event.target.value})}           
             		/>
 		        <button type="submit">Submit</button>
 		        {loadingMessage}
