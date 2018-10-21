@@ -73,10 +73,10 @@ export class PurchaseHistory extends React.Component {
 		fetch(request)
 	      .then(res => res.json())
 	      .then(
-	        (res) => {
+	        (items) => {
 	          this.setState({
 	            isLoaded: true,
-	            items: res
+	            items
 	          });
 	        },
 	        // Note: it's important to handle errors here

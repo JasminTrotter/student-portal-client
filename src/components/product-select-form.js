@@ -1,6 +1,6 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {setProduct, setClassAmount, setDollarAmount, setDate} from '../actions/product-selection';
-import {reduxForm, focus} from 'redux-form';
 var moment = require('moment');
 
 
@@ -17,20 +17,21 @@ export class ProductSelectForm extends React.Component {
 
 	onSubmit(value) {
 
+		this.props.history.push('/payment');
 		this.props.dispatch(setProduct(this.state.value));
 		this.props.dispatch(setClassAmount(this.state.classAmount));
 		this.props.dispatch(setDollarAmount(this.state.dollarAmount));
 		this.props.dispatch(setDate(this.state.date));
-		this.props.history.push('/payment');
+		
     }
     render() {
 
 		return (
 			<div className="product-select-form">
 			  <h3 className="panel-header">Select a Package</h3>
-		      <form onSubmit={this.props.handleSubmit(value =>
+		      <form onSubmit={value =>
 	                    this.onSubmit(value)
-	                )}>
+	                }>
 		      <fieldset>
 		        	<div className="product-select-input">
 		        		<label>
@@ -97,8 +98,4 @@ export class ProductSelectForm extends React.Component {
 	}
 }
 
-export default reduxForm({
-    form: 'ProductSelectForm',
-    onSubmitFail: (errors, dispatch) =>
-        dispatch(focus('ProductSelectForm', Object.keys(errors)[0]))
-})(ProductSelectForm);
+export default connect()(ProductSelectForm);
