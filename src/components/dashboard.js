@@ -9,10 +9,14 @@ import Login from './login';
 export class Dashboard extends React.Component {
 
 	render() {
-		console.log(this.props);
+
+		//to greet the user by their first name
 		const firstName = localStorage.getItem('firstName');
+
 		const userId = localStorage.getItem('userId');
 		const authToken = localStorage.getItem('authToken');
+
+		//render the dashboard if user is logged in. Otherwise, render the login component
 			if(authToken) {
 
 				return (
@@ -22,7 +26,7 @@ export class Dashboard extends React.Component {
 						<div className="greeting">Hello {firstName}! </div>
 						<div className="panels" >
 							<div className="panel" ><ProductSelectForm history={this.props.history}/></div>
-							<div className="panel" ><PurchaseHistory userId={userId} classAmount={this.props.setProduct.classAmount} dollarAmount={this.props.setProduct.dollarAmount} date={this.props.setProduct.date}/></div>
+							<div className="panel" ><PurchaseHistory userId={userId} /></div>
 						</div>
 					</div>
 				);
@@ -33,12 +37,8 @@ export class Dashboard extends React.Component {
 	}
 }
 
-const mapStateToProps = state => ({
-	user: state.auth.currentUser,
-	setProduct: state.setProduct
-})
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect()(Dashboard);
 
 
 

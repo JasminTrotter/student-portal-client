@@ -26,7 +26,7 @@ export class ProductSelectForm extends React.Component {
 		
     }
     render() {
-console.log(this.props);
+
 		return (
 			<div className="product-select-form">
 			  <h3 className="panel-header">Select a Package</h3>

@@ -14,11 +14,11 @@ class Payment extends React.Component {
   }
 
  	async submit(ev) {
-    console.log(this.props);
+
 	  let {token} = await this.props.stripe.createToken({name: "Name"});
     let product = this.props.value;
     let description = this.props.classes;
-    console.log(token);
+
 	  let response = await fetch(`${API_BASE_URL}/charge`, {
 	    method: "POST",
 	    headers: {'Content-Type': 'application/json'},
@@ -28,14 +28,16 @@ class Payment extends React.Component {
         description: description
         })
   		});
-    console.log(response);
 
   		if (response.ok) this.setState({complete: true});
 
+      //save props to local storage after credit card runs, 
+      //so we can from there POST it to purchase-history
       saveClasses(this.props.classes);
       saveAmountPaid(this.props.dollars);
       let date = new moment().format("MMM Do YYYY");
       savePurchaseDate(date);
+
       this.props.history.push('/dashboard');
       
 	}

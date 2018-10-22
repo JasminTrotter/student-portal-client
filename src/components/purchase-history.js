@@ -18,11 +18,15 @@ export class PurchaseHistory extends React.Component {
 	componentDidMount() {
 
 		const {userId} = this.props;
+
+		//retrieve data about purchase from local storage
 		const paid = localStorage.getItem('amountPaid');
 		const classes = localStorage.getItem('classes');
 		const date = localStorage.getItem('purchaseDate');
 
-
+		//if there is data from a purchase in local storage, 
+		//POST it, then GET purchase history. 
+		//if no data from a purchase, simply GET the history
 		if (localStorage.getItem('classes') === null) {
 			this.getHistory(userId);
 		}
@@ -93,9 +97,6 @@ export class PurchaseHistory extends React.Component {
 
 	render() {
 		const { error, isLoaded, items } = this.state;
-		
-		//trying to figure out why the key is not showing up in the `li` down below
-		items.map(item => (console.log(item.id)))
 
 	    if (error) {
 

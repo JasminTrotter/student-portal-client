@@ -84,11 +84,11 @@ export const login = (username, password) => dispatch => {
 
 
 export const logout = (dispatch) => {
-    dispatch(clearAuth);
+    dispatch(clearAuth());
     localStorage.removeItem('authToken');
     localStorage.removeItem('userId');
     localStorage.removeItem('firstName');
-    dispatch(logoutSuccess);
+    dispatch(logoutSuccess());
 }
 
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS"

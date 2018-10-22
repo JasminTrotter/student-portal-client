@@ -6,14 +6,14 @@ import {connect} from 'react-redux'
 export class Header extends React.Component {
 
 	render() {
-		console.log(this.props);
+
 		return(
 			<div className="header-div">
 				<header className="App-header" role="banner">
 		          	<img src={logo} className="App-logo" alt="logo" />
 		          	<h1 className="App-title">Student Portal</h1>
 		        </header>
-		        <Navbar history={this.props.history}/>
+		        <Navbar />
 	        </div>
 		);
 	}
