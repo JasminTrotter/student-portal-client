@@ -18,8 +18,8 @@ export class LoginForm extends React.Component {
 
         return this.props
         .dispatch(login(username, password))
-        .then(() => this.props.history.push('/dashboard'));
-        
+        .then(() => this.props.history.push('/dashboard'))
+       	.then(() => window.location.reload());
 
     }
 
