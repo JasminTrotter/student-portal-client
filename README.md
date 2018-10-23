@@ -15,15 +15,15 @@ This project was bootstrapped with Create React App. Student Portal's server sid
 Desktop and mobile view of app
 
 ## Technology
-- Front End
+### Front End
 - React.js
 - Redux
 - CSS Modules
 - Continuous integration and deployment with Travis CI
-- Back End
-- View server code [this repository](https://github.com/JasminTrotter/student-portal-api).
 - Testing with Enzyme is in progress
 
+### Back End
+- View server code [this repository](https://github.com/JasminTrotter/student-portal-api).
 - Node.js + Express.js (web server)
 - MongoDB (database)
 - JSON Web Tokens (user authentication)
@@ -31,4 +31,4 @@ Desktop and mobile view of app
 
 ## Future Features
 - User can view history of attendances and see how many classes are left in their current package.
--Integrate features of [Join Class](https://join-class.herokuapp.com/) (click [here](https://github.com/JasminTrotter/Join-Class-App) for repo) so students can take care of scheduling and payment all in one app.
+- Integrate features of [Join Class](https://join-class.herokuapp.com/) (click [here](https://github.com/JasminTrotter/Join-Class-App) for repo) so students can take care of scheduling and payment all in one app.
