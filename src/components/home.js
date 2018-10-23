@@ -2,8 +2,9 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 export function Home(props) {
-
+    console.log(props);
 	return (
+
 
 		<div className="homePage">
 			<section className="about-us">
