@@ -7,7 +7,7 @@ For a demo, use the login credentials...
 
 This project was bootstrapped with Create React App. Student Portal's server side code (built with Node.js and MongoDB) can be found in [this repository](https://github.com/JasminTrotter/student-portal-api).
 
-
+![app screenshot](https://github.com/JasminTrotter/student-portal-client/blob/master/src/styles/assets/studentportalscreen.PNG)
 
 ## Introduction
 [Ballet Body by Jasmin](https://www.balletbodybyjasmin.com/) is an adult ballet program for absolute beginners. Create an account [here](https://student-portal-balletbody.herokuapp.com/signup) to purchase a class or a package of multiple classes. You will also be able to view a history of your purchases on your dashboard. See you in class!
