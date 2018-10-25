@@ -28,6 +28,7 @@ Desktop and mobile view of app
 - MongoDB (database)
 - JSON Web Tokens (user authentication)
 - Testing with Mocha is in progress
+- Stripe API for payment processing
 
 ## Future Features
 - User can view history of attendances and see how many classes are left in their current package.
