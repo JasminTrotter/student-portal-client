@@ -4,6 +4,7 @@ A responsive web app where students can purchase classes and view a history of t
 For a demo, use the login credentials...
 * username: DemoUser
 * password: ballerinasRcool
+to test card processing functionality, use card number 4242 4242 4242 4242.
 
 This project was bootstrapped with Create React App. Student Portal's server side code (built with Node.js and MongoDB) can be found in [this repository](https://github.com/JasminTrotter/student-portal-api).
 
