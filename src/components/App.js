@@ -42,7 +42,7 @@ export default class App extends React.Component {
 
       return (
         <Provider store={store}>
-          <StripeProvider apiKey="pk_test_5u4S86Ac7OpnSuMj107YWfpi">
+          <StripeProvider apiKey="pk_live_lBXooglUS4VXYobOIDC3fB0S">
             <Elements>
               <Router>
                 <div className="App">
