@@ -20,13 +20,7 @@ export function Login(props) {
 	            <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
 
 	        </section>
-	        <section className="demo-info">
-    			<h3>For a demo, use the login credentials...</h3>
-    			<p>username: <i>DemoUser</i></p>
-    			<p>password: <i>ballerinasRcool</i></p>
-    			<h4>To test credit card processing functionality, use card number:</h4>
-          		<p>4242 4242 4242 4242</p>
-    		</section>
+
 	        </div>
 	    );
 
@@ -37,3 +31,10 @@ export function Login(props) {
 
 export default connect()(Login)
 
+	     //    <section className="demo-info">
+    		// 	<h3>For a demo, use the login credentials...</h3>
+    		// 	<p>username: <i>DemoUser</i></p>
+    		// 	<p>password: <i>ballerinasRcool</i></p>
+    		// 	<h4>To test credit card processing functionality, use card number:</h4>
+      //     		<p>4242 4242 4242 4242</p>
+    		// </section>
