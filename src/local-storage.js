@@ -66,3 +66,54 @@ export const removePurchaseDate = () => {
         localStorage.removeItem('purchaseDate');
     } catch (e) {}
 };
+
+
+
+//for POST to Reservations 
+export const saveClassTitle = classTitle => {
+    try {
+        localStorage.setItem('classTitle', classTitle);
+    } catch (e) {}
+};
+
+export const saveTime = time => {
+    try {
+        localStorage.setItem('time', time);
+    } catch (e) {}
+};
+
+export const saveDay = day => {
+    try {
+        localStorage.setItem('day', day);
+    } catch (e) {}
+};
+
+export const saveDate = date => {
+    try {
+        localStorage.setItem('date', date);
+    } catch (e) {}
+};
+
+export const removeClassTitle = () => {
+    try {
+        localStorage.removeItem('classTitle');
+    } catch (e) {}
+};
+
+export const removeTime = () => {
+    try {
+        localStorage.removeItem('time');
+    } catch (e) {}
+};
+
+export const removeDay = () => {
+    try {
+        localStorage.removeItem('day');
+    } catch (e) {}
+};
+
+export const removeDate = () => {
+    try {
+        localStorage.removeItem('date');
+    } catch (e) {}
+};

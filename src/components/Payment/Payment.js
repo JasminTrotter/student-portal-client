@@ -55,11 +55,6 @@ class Payment extends React.Component {
         <CardElement />
         <button onClick={this.submit}>Send</button>
 
-        <div className="demo-info">
-          <h4>To test credit card processing functionality, use card number:</h4>
-          <p>4242 4242 4242 4242</p>
-          <h4>(enter any number for exp and CVC fields)</h4>
-        </div>
       </div>
     );
   }
