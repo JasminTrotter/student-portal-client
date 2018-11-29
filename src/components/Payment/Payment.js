@@ -54,7 +54,13 @@ class Payment extends React.Component {
         <p>Enter card number to make your purchase of {this.props.classes} for ${this.props.dollars}</p>
         <CardElement />
         <button onClick={this.submit}>Send</button>
-
+        <section className="demo-info">
+          <h3>For a demo, use the login credentials...</h3>
+          <p>username: <i>DemoUser</i></p>
+          <p>password: <i>ballerinasRcool</i></p>
+          <h4>To test credit card processing functionality, use card number:</h4>
+          <p>4242 4242 4242 4242</p>
+        </section>
       </div>
     );
   }
