@@ -15,7 +15,11 @@ class Payment extends React.Component {
 
  	async submit(ev) {
 
-	  let {token} = await this.props.stripe.createToken({name: "Name"});
+    const firstName = localStorage.getItem('firstName');
+    const lastName = localStorage.getItem('lastName');
+    const fullName = firstName + ' ' + lastName;
+
+	  let {token} = await this.props.stripe.createToken({name: fullName});
     let product = this.props.value;
     let description = this.props.classes;
 

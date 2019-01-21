@@ -3,7 +3,7 @@ import {SubmissionError} from 'redux-form';
 
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
-import {saveAuthToken, clearAuthToken, saveUserId, saveFirstName} from '../local-storage';
+import {saveAuthToken, clearAuthToken, saveUserId, saveFirstName, saveLastName} from '../local-storage';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
@@ -37,10 +37,11 @@ export const authError = error => ({
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
-    const {user} = decodedToken
+    const {user} = decodedToken;
     dispatch(setAuthToken(authToken));
     dispatch(authSuccess(user));
     saveFirstName(user.firstName);
+    saveLastName(user.lastName);
     saveUserId(user.id);
     saveAuthToken(authToken);
 

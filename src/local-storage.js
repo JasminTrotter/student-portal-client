@@ -29,6 +29,12 @@ export const saveFirstName = firstName => {
     } catch (e) {}
 };
 
+export const saveLastName = lastName => {
+    try {
+        localStorage.setItem('lastName', lastName);
+    } catch (e) {}
+};
+
 
 //For POST to Purchase History
 export const saveClasses = classes => {
