@@ -5,6 +5,12 @@ import {logout} from '../actions/auth';
 
 
 export class Navbar extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			loggedIn: false
+		}
+	}
 
 	onClick(ev) { 
 		
@@ -12,9 +18,18 @@ export class Navbar extends React.Component {
 
 	}
 
+	componentWillReceiveProps(nextProps, nexState) {
+		console.log(this.props);
+		console.log(nextProps);
+
+		if (this.props.authToken !== nextProps.authToken) {
+			this.setState({loggedIn: !this.state.loggedIn})
+		}
+	}
+
 	render() {
 
-		if(this.props.authToken !== null && localStorage.getItem('authToken') !== null) {
+		if(this.state.loggedIn) {
 
 			return (
 				<nav className="navbar">
