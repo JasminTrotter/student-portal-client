@@ -19,9 +19,7 @@ export class Navbar extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps, nexState) {
-		console.log(this.props);
-		console.log(nextProps);
-
+	
 		if (this.props.authToken !== nextProps.authToken) {
 			this.setState({loggedIn: !this.state.loggedIn})
 		}
