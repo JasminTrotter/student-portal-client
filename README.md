@@ -1,3 +1,5 @@
+## This application is now deprecated.
+
 # [Student Portal](https://student-portal-balletbody.herokuapp.com/)
 
 A responsive web app where students can purchase classes and view a history of their past purchases. Built with React and Redux. Work in progress. See the live app [here](https://student-portal-balletbody.herokuapp.com/).
